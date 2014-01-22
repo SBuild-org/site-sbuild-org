@@ -1,11 +1,7 @@
 = Installation
-Tobias Roeser
-2013-12-13
-:revversion: svn
-:SBuildVersion: {revversion}
-:jbake-type: page
-:jbake-status: published
-
+:author: Tobias Roeser
+:revdate: 2013-12-13
+:SBuildVersion: 0.7.1
 
 == Requirements
 
@@ -28,21 +24,31 @@ in http://lepetitfou.dyndns.org/redmine/projects/lefousportageoverlay[lefous por
 
 If you used the installation procedure of you Linux distribution you were done here, else continue.
 
-Unpack the ZIP file content into a directory of your choice, e.g. +"/opt/sbuild-{SBuildVersion}"+.
+Unpack the ZIP file content into a directory of your choice, e.g. +/opt/sbuild-{SBuildVersion}+.
 
-Make sure, the expanded file +"/opt/sbuild-{SBuildVersion}/bin/sbuild"+ is executable, e.g. with +chmod -x /opt/sbuild-{SBuildVersion}/bin/sbuild+.
+Make sure, the expanded file +/opt/sbuild-{SBuildVersion}/bin/sbuild+ is executable, e.g. with +chmod -x /opt/sbuild-{SBuildVersion}/bin/sbuild+.
 
-Add the binary directory (e.g. +"/opt/sbuild-{SBuildVersion}/bin/"+) to your search path: +PATH=/opt/sbuild-{SBuildVersion}/bin:$PATH+
+Add the binary directory (e.g. +/opt/sbuild-{SBuildVersion}/bin/+) to your search path: +PATH=/opt/sbuild-{SBuildVersion}/bin:$PATH+
 
 
 === Windows
 
-Unpack the ZIP file content into an directory of your choice, e.g. +"C:\Program Files\sbuild-{SBuildVersion}"+.
-After unpacking, you should see the sub directories +"bin"+, +"lib"+ and +"doc"+.
+Unpack the ZIP file content into an directory of your choice, e.g. +C:\Program Files\sbuild-{SBuildVersion}+.
+After unpacking, you should see the sub directories `bin`, `lib` and `doc`.
 
-Add the environment variable +SBUILD_HOME+ with the value of that directory, e.g. +SBUILD_HOME=C:\Program Files\sbuild-{SBuildVersion}+
+Add the environment variable `SBUILD_HOME` with the value of that directory, e.g. +SBUILD_HOME=C:\Program Files\sbuild-{SBuildVersion}+
 
-Add the path of the +"bin"+ directory to the +PATH+ variable: +PATH=%SBUILD_HOME%\bin:%PATH%+
+[NOTE]
+.Why is the `SBUILD_HOME` variable needed under Windows?
+====
+To be honest, we don't know. Besides various Windows Command shell magic, we were not able to automatically infer the installation location of SBuild.
+Therefore we rely on the user to provide the location with the `SBUILD_HOME` variable.
+
+If you know how to do that automatically, we would like to receive a new issue or even better pull request from you. 
+====
+
+
+Add the path of the `bin` directory to the `PATH` variable: `PATH=%SBUILD_HOME%\bin:%PATH%`
 
 [CAUTION]
 .Special Notes for Cygwin Users
@@ -74,9 +80,10 @@ Open an new terminal window and execute the command: +sbuild --version+
 
 You should see something like this:
 
+.Output of `sbuild --version`
 ----
 $ sbuild --version
-SBuild 0.6.0.9002 (c) 2011 - 2013, ToToTec GbR, Tobias Roeser
+SBuild 0.7.1 (c) 2011 - 2013, ToToTec GbR, Tobias Roeser
 ----
 
 

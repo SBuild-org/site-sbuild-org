@@ -11,9 +11,9 @@
             <div class="nav-collapse collapse">
               <ul class="nav">
                 <li><a href="/plugins.html">Plugins</a></li>
-                <li><a href="/news.html">News</a></li>
-                <li><a href="/documentation/current">Documentation</a></li>
-                <li><a href="/download.html">Download</a></li>
+                <li><a href="${config.path_news}">News</a></li>
+                <li><a href="${config.path_doc_sbuild}">Documentation</a></li>
+                <li><a href="${config.path_download}">Download</a></li>
                 <li><a href="/community.html">Community</a></li>
 <!--                <li><a href="${config.feed_file}">Subscribe</a></li>
                 <li class="dropdown">

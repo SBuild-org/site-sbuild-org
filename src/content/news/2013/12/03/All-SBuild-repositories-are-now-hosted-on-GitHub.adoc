@@ -1,0 +1,22 @@
+= All SBuild repositories are now hosted on GitHub
+:author: Tobias Roeser
+:revdate: 2013-12-03
+:jbake-type: post
+:jbake-status: published
+:summary: After the switch of SBuild's main source code repository to Git, we now moved all projects to Git. All repositories are hosted at Github, which, so we think, makes it easier for the community to participate.
+
+After the switch of SBuild's main source code repository to Git, we now moved all projects to Git. All repositories are hosted at Github, which, so we think, makes it easier for the community to participate.
+
+Here are some pointers to official repositories you might be interested in:
+
+- https://github.com/SBuild-org/sbuild - The main repository containing the API and the runner.
+- https://github.com/SBuild-org/sbuild-eclipse-plugin - The Eclipse Plugin, integration SBuild into Eclipse.
+- https://github.com/jenkinsci/sbuild-plugin - The Jenkins Plugin, which allows to directly execute SBuild targets in a Jenkins job.
+
+Some other repositories might be interesting, too:
+
+- https://github.com/lefou/sbuild-aether - SBuild Aether plugin, providing a SchemeHandler to resolve transitive Maven dependencies based on the http://eclipse.org/aether/[Eclipse Aether] library.
+- https://github.com/lefou/sbuild-adept - SBuild Adept plugin, providing a SchemeHandler to resolve transitive dependencies based on the https://github.com/adept-dm/adept[Adept library]. 
+
+All the best and a restful Advent season,
+the SBuild team.

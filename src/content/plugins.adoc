@@ -4,8 +4,49 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 
+SBuild's plugin mechanism allows you to extends your Buildscript very easily.
 
-== Plugin Consumer
+// TODO: add link to plugin writers guide
+If you are interested in writing your own SBuild Plugin, please visit the Plugin Writers Guide.
 
-== Plugin Writer
+== Plugins
 
+Here, you can find a list of known SBuild Plugins. You you wrote a plugin and want it to be listed here, please contact us.
+
+[cols="2,4,1,1,1,1",options="header"]
+|===
+| Plugin Name
+| Description
+| Latest Version
+| SBuild Version
+| License
+| Links
+
+| JBake Plugin
+| Integrates the static page generator JBake
+| 
+| 0.7.1
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-jbake[Github]
+
+| SBuild Plugin Plugin
+| A Plugin to create SBuild Plugins
+| 0.2.1
+| 0.7.1
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-plugin-plugin[Github]
+
+| Maven Deploy Plugin
+| Allows deployments to Maven repositories like the Sonatype OSS Nexus Repository
+|
+| 0.7.1
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-maven-deploy[Github]
+
+| Ather Plugin
+| Provides a Aether-based SchemeHandler, that can resolve transitive dependencies from Maven repositories.
+| 
+| 0.7.1
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-aether[Github]
+|====

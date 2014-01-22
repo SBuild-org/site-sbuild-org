@@ -1,0 +1,22 @@
+= Jenkins Plugin for SBuild available
+:author: Tobias Roeser
+:revdate: 2013-12-06
+:jbake-type: post
+:jbake-status: published
+:summary: The new Jenkins SBuild Plugin allows you to easily and automatically install any SBuild version into your Jenkins. A dedicated SBuild builder lets you select the desired SBuild version and the buildfiles, targets and options you want to use.
+
+
+Running SBuild projects in Jenkins CI is now even easier.
+
+The new Jenkins SBuild Plugin allows you to easily and automatically install any SBuild version into your Jenkins. 
+A dedicated SBuild builder lets you select the desired SBuild version and the buildfiles, targets and options you want to use. 
+It is even possible to test your builds with multiple versions of SBuild, to guarantee a maximum of compatibility. 
+No need, to install SBuild on your CI server manually.
+
+To install, you open the plugin management page of your Jenkins installation, and install the "SBuild Plugin" which is listed under "build tools" category.
+
+For documentation and additional information please visit the https://wiki.jenkins-ci.org/display/JENKINS/SBuild+Plugin[Jenkins Wiki].
+
+The source code is located at https://github.com/jenkinsci/sbuild-plugin[Github].
+
+For feature suggestions and bug reports please visit http://issues.jenkins-ci.org/secure/IssueNavigator.jspa?mode=hide&reset=true&jqlQuery=project+%3D+JENKINS+AND+status+in+%28Open%2C+%22In+Progress%22%2C+Reopened%29+AND+component+%3D+%27SBuild%27[Jenkins Jira].

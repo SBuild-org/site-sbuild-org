@@ -11,7 +11,8 @@ class SBuild(implicit _project: Project) {
   import org.sbuild.plugins.jbake._
   Plugin[JBake] configure { _.copy(
     sourceDir = Path("src"),
-    targetDir = Path("target")
+    targetDir = Path("target"),
+    jbakeVersion = JBakeVersion.Packaged("2.2.1-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.2.1-SNAPSHOT-bin.zip")
    ) }
 
 }

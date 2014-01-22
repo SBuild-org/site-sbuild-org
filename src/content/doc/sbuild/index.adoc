@@ -1,0 +1,10 @@
+= Documentation
+Tobias Roeser
+2013-12-28
+:jbake-type: page
+:jbake-status: published
+
+== SBuild 0.7.1
+
+* link:{path_doc_sbuild}/0.7.1/index.html[SBuild Reference Manual 0.7.1]
+

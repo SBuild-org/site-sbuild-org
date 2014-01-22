@@ -1,0 +1,93 @@
+= Documentation
+:author: Tobias Roeser
+:revdate: 2014-01-20
+:jbake-type: page
+:jbake-status: published
+:SBuildVersion: 0.7.1
+:numbered:
+:idprefix:
+:toclevels: 3
+
+This is the Documentation for SBuild {SBuildVersion}. 
+link:{path_doc_sbuild}[_Not the version you are looking for?_]
+
+toc::[right]
+
+:leveloffset: 1
+
+include::Installation.adoc[]
+
+include::Usage.adoc[]
+
+:leveloffset: 0
+
+
+== Writing Buildfiles
+
+=== The Buildfile - the only true source
+
+SBuild buildfiles are normal Scala source files. 
+As such, they can be viewed and edited as any other text file with any text editor. Although an editor providing syntax highlighting and other Scala specific candy might be helpful.
+
+*The buildfile is the only place, where SBuild looks for description of your build!*
+
+To change the build and the SBuild behavior, you have thus only the option to change the buildfile or to make use of the various commandline options of `sbuild`.
+
+=== Buildfile Preprocessing
+
+SBuild buildfiles are Scala source files and must be compile before SBuild can use them. 
+This preprocessing is automatically done by SBuild, without any interaction from your site.  
+Of course, the Scala compiler has no notion of SBuild plugins, libraries and includes, thus the buildfile must be preprocessed.
+SBuild will extract and interpret specific annotations before the buildfile is compiled and executed.
+
+These are the special annotation, which are typically placed just before the build class `SBuild`.
+[cols="1,5"]
+|====
+| `@version`
+| Contains the minimal SBuild version that is required for this buildfile. 
+  This annotation should be present in each buildfile. 
+  It will help detect version mismatches which otherwise might result in strange compile or runtime errors, which are comparatively hard to understand.
+  
+  Example: `@version("0.7.1")`
+    
+// TODO: refer to plugin chapter
+| `@classpath`
+| Additional plugins and libraries that should be used by this buildfile have to be declared here.
+  Each given entry will be interpreted as a potentially plugin (see chapter Plugins), unless it is prefixed with +raw:+.
+  If the entry is a plugin, SBuild will automatically load it's dependencies.
+  All default SchemeHandler can be used here. 
+  
+  Example: `@classpath("mvn:org.sbuild:org.sbuild.plugins.sbuildplugin:0.2.1", "mvn:org.apache.ant:ant:1.8.4")`
+  
+| `@include`
+| Here you can refer to additional Scala source files.
+  These files will be compiled by SBuild with the same classpath as the buildfile.
+  The compiled classes will be added to the classpath and can be directly used. 
+  All default SchemeHandler can be used here. 
+  
+  Example: `@include("CommonSettings.scala")`
+|====
+
+=== SBuild Core API
+
+=== Using Plugins
+
+=== Multi-Project Setups
+
+== Advanced topics
+
+=== Understanding SchemeHandler's
+
+=== Writing Plugins
+
+==== Plugin API
+
+==== Conventions
+
+==== Plugin Classloading
+
+== Vision
+
+=== The unimplemented parts
+
+=== The eco system

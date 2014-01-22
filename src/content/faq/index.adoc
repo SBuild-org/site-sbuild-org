@@ -1,0 +1,18 @@
+= Frequently asked Questions
+:subtitle: and Answers
+:author: Tobias Roeser
+:revdate: 2014-01-22
+:toclevels: 1
+:toc-title: Questions
+:jbake-type: page
+:jbake-status: published
+
+toc::[]
+
+== When will be the next SBuild version released?
+
+Currently, as the development of SBuild is in progress, we have no fixed release schedule. 
+We have rough cut milestones, but new features might come and go. Releases were made if we think we need to.
+
+We give found bugs a high priority. 
+If you need some of the latest fixes or features and for some reasons it is not easily possible for you to build the latest SBuild yourself, just tell us your demand, and we will try to get a new release out as soon as possible.   

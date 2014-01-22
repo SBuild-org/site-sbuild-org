@@ -3,7 +3,7 @@
 	<#include "menu.ftl">
 	
 	<div class="page-header">
-		<h1>${content.title}</h1>
+		<h1>${content.title}<#if content.subtitle??> <small>${content.subtitle}</small></#if></h1>
 	</div>
 
 <!--

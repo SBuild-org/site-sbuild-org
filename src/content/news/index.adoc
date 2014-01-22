@@ -1,0 +1,3 @@
+= News
+:jbake-type: news
+:jbake-status: published
