@@ -11,5 +11,5 @@ Based on the feedback and our own experiences with the link:{path_doc_sbuild}/0.
 This is, to allow and encourage immutable plugin configurations over mutable ones. 
 For a complete list of changes read the link:{path_doc_sbuild}/0.7.1/SBuild-0.7.1.html#Changelog[Changelog].
 
-Merry Christmas and a Happy New Year,
+Merry Christmas and a Happy New Year, +
 Tobias Roeser

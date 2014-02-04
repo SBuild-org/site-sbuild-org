@@ -3,8 +3,20 @@ Tobias Roeser
 2013-12-28
 :jbake-type: page
 :jbake-status: published
+:sbuildversion: 0.7.1
 
-== SBuild 0.7.1
+== SBuild {sbuildversion}
 
-* link:{path_doc_sbuild}/0.7.1/index.html[SBuild Reference Manual 0.7.1]
+* link:{path_doc_sbuild}/{sbuildversion}/index.html[SBuild Reference Manual {sbuildversion}]
+* http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Documentation[The old Documentation] (more complete)
 
+* link:{path_doc_sbuild}/0.7.0/SBuild-0.7.0-PluginSystem.html[The new Plugin System of SBuild 0.7.0]
+
+* Scaladoc
+** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference]
+** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference]
+** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference]
+
+== Older Versions
+
+Information and documentation about previous versions can be found to the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki[SBuild Redmine] page. 

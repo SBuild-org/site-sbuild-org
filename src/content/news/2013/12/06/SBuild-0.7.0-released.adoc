@@ -11,5 +11,5 @@ This version comes with many new link:{path_doc_sbuild}/0.7.0/SBuild_0_7_0.html#
 
 Also, there is now a https://wiki.jenkins-ci.org/display/JENKINS/SBuild+Plugin[Jenkins plugin] available for SBuild.
 
-May the build with you,
+May the build with you, +
 Tobias Roeser

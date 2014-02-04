@@ -30,7 +30,9 @@
 	<#list posts as post>
   		<#if (post.status == "published" && post.date??)>
   			<h3><a href="${post.uri}">${post.title}</a> <small>${post.date?string("dd MMMM yyyy")}</small></h3>
-  			<p>${post.summary}</p>
+  			<#if post.summary??>
+  			    <p>${post.summary}</p>
+  			</#if>
   			<p><a href="${post.uri}">Read more...</a></p>
   		</#if>
   	</#list>

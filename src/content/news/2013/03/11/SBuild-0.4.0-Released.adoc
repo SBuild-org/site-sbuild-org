@@ -1,0 +1,21 @@
+= SBuild 0.4.0 Released
+Tobias Roeser
+2013-03-11
+:summary: SBuild 0.4.0 Release was release on 2013-03-09 and brought a lot of new features and speed improvements.
+:jbake-type: post
+:jbake-status: published
+
+I'm happy to announce the release of *SBuild 0.4.0*. 
+
+This version brings a lot of new features and speed improvements. 
+Up-to-date state calculation of phony targets is now based on (virtual) lastModified timestamps, which can be overridden in a target via TargetContext.
+Phony link:/news/2013/02/23/Target-caching-in-SBuild-0.4.html[targets can now be cached] - SBuild will not reexecute them if the dependencies or the project file did not change.
+Additional link:/news/2013/03/07/Attached-Files-and-Alias-Schemes-in-SBuild-0.4.html[files can be attached] to targets.
+Empty phony targets will automatically attach all files of their dependencies and last but not least, the SBuild comand line got improved.
+Essential information are highlighted with colors and error messages output got some love, too. 
+(Read the full link:SBuild_0_4_0#Changelog[change log here].)
+
+You can link:SBuild_0_4_0[download SBuild 0.4.0 here]. Your feedback is much appreciated!
+
+Kind Regards, +
+Tobias Roeser

@@ -1,0 +1,37 @@
+= SBuild 0.1.0 First Public Release
+Tobias Roeser
+2012-07-29
+:jbake-type: post
+:jbake-status: published
+:summary: I'm happy to announce, that SBuild made it's first public release: SBuild 0.1.0
+
+I'm happy to announce, that SBuild made it's first public release: *SBuild 0.1.0*.
+
+The purpose of this release is to have a stable foundation to base development one, so that SBuild 0.1.0 can be used to build itself as well as various other projects. 
+
+To start, http://sbuild.tototec.de/sbuild/projects/sbuild/files[download] the SBuild Disbritution, unpack it and run `sbuild`. 
+Under Windows, you might need to set the environment varible `SBUILD_HOME`.
+
+The most important steps after this release is to gather feedback and to complete the documentation. 
+For now, there is the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki[Wiki] and the Scala-Doc. A DocBook-based Documentation to be released as PDF and HTML is in planning, too.
+
+As there are many things to write about, I don't know exactly were to start. What do you want first?
+
+* Documentation of the various features
+* Documentation about the internals of SBuild
+* Mini-Howtos à la How to compile a Java Project
+* Ant-Integration
+* Documentation of Ant-Wrappers
+* Migration-Examples from other Buildsytems
+* Best Practices about dependency management
+* Howto setup Multi-Projects
+* ...
+
+Please leave some comments or open a http://sbuild.tototec.de/sbuild/projects/sbuild/issues/new[ticket]!
+
+Now, I wish you much fun with a powerful and fast build system for (but not limited to) the Java platform.
+
+
+Best regards,
+
+Tobias Roeser

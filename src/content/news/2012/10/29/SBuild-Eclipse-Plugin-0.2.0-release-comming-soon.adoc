@@ -1,0 +1,21 @@
+= SBuild Eclipse Plugin 0.2.0 release comming soon
+Tobias Roeser
+2012-10-29
+:jbake-type: post
+:jbake-status: published
+:summary: The upcomming release of version:"SBuild Eclipse Plugin 0.2.0" will bring support for workspace resolution. You can configure aliases to replace dependencies by projects in the Eclipse workspace.
+
+The upcomming release of *SBuild Eclipse Plugin 0.2.0* will bring support for workspace resolution.
+You can configure aliases to replace dependencies by projects in the Eclipse workspace.
+You can even use regualar expressions in the alias definition, e.g. to match frequently changing dependencies (version numbers) or projects, that produce multiple artifacts (JARs).
+
+All workspace projects in you workspace can be referenced, there is no restriction at all.
+So, in contrast to other solutions, like Maven or Ivy Eclipse integrations, where you can only depend on projects that are managed with the same buildsystem, with SBuild Eclipse Plugin, you are free to depend an any workspace project you want. Of course, which more possibilities also comes more resposibility.
+It is up to you, to alias your dependencies to the correct workspace projects!
+
+Also, the next version of SBuild Eclipse Plugin will come with an update site for easier installation and update.
+
+Stay tuned for the next release of *SBuild Eclipse Plugin 0.2.0*.
+
+Regards, +
+Tobias Roeser

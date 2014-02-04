@@ -1,0 +1,25 @@
+= SBuild 0.3.2 released
+Tobias Roeser
+2013-01-26
+:jbake-type: post
+:jbake-status: published
+:summary: Today, I have the pleasure to announce the next SBuild release: SBuild 0.3.2.
+
+Today, I have the pleasure to announce the next SBuild release: SBuild 0.3.2.
+
+This version now comes with three preconfigured scheme handlers: "http", "mvn" and "zip", which brings immediately various improvements: 
+All preconfigured scheme handler can also be used in `@classpath` and `@include` annotations. 
+So, the typical Ant dependency, pointing the the Maven Central repository, can now be written as `@classpath("mvn:org.apache.ant:ant:1.8.4")`.
+Which brings us to the next improvement.
+Those Ant jars and possible various other jars you typically use, are stored in the local Maven repository and are thus shared.
+No need, to download and re-download them again and again.
+As long as you don't want to customize the configuration of the default scheme handlers, you now no longer need to register them by yourself.
+You can no longer forget to add them and of course, you build files will count three lines less, now.
+Of course, you should ensure that you build script requires on SBuild 0.3.2 now with `@version("0.3.2")`.
+
+Beside the above changes, SBuild 0.3.2 fixed a bug in the annotation parser, preventing the use of standard Scala comments ("//") in and after those annotations.
+Also, it brings a new ScalaRepl addon and the AntZipFileSet wrapper for easier use of the AntJar task. Long running downloads will now print a progress.
+
+I wish you much fun with this newest SBuild release.
+
+Tobias Roeser

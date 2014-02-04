@@ -1,0 +1,144 @@
+= Natures - Experimental high level abstraction for builds
+Tobias Roeser
+2012-11-27
+:jbake-type: post
+:jbake-status: published
+
+Today, I will announce some very exciting development in SBuild land...
+
+== Natures
+
+For now, I have only a prototype, but looking onto what I have already, I am very excited to release it in a near future.
+
+Imagine, you could write a SBuild build file like so:
+
+[source,scala]
+----
+class SBuild(implicit project: Project) {
+
+  // Easy access to Maven Central repo
+  SchemeHandler("mvn", new MvnSchemeHandler())
+
+  // A compile classpath
+  val compileCp = 
+    "mvn:org.scala-lang:scala-library:2.9.2" ~
+    "mvn:org.slf4j:slf4j-api:1.7.2"
+
+  // Define an artifact with some good default, that of course can be overridden
+  val myArtifact =
+    // implicitly adds a "clean" target
+    new CleanNature
+    // implicitly adds a "compileScala" target
+    with CompileScalaNature
+    // implicitly adds a "jar" target
+    with JarNature
+    {
+      // here, we define the bare minimum, to get this example to work
+      // a name, a version and the compile dependencies 
+      override def artifact_name = "org.example.myartifact"
+      override def artifact_version = "1.0.0"
+      override def compileScala_dependsOn = compileCp
+    }
+
+  // this will effectively create all targets implied by the configuration in this project
+  myArtifact.createTargets
+
+}
+----
+
+What looks like a whole lot of magic, is far from magic at all.
+Each nature is a trait extending a Nature trait, potentially already providing some good defaults.
+With a bit of naming policy, this is a very clean concept.
+All the work does the compiler.
+And, of course at no point you sacrify the control.
+You can always write targets directly.
+And, as you get the targets which you created with @Nature.createTargets@ as a return value, you can even extend or manipulate them further, e.g. by adding additional dependencies.
+
+The output of `sbuild -l` of the above defined project:
+
+----
+% sbuild -l
+clean 
+compileScala
+target/org.example.myartifact-1.0.0.jar
+----
+
+The above buildscript is al that is needed to have a working compile, jar and clean target in a project.
+
+Want have a look at the current internals?
+
+Here are my current drafts for three of the obove used natures.
+
+=== Nature trait
+
+[source,scala]
+----
+/**
+ * To ensure, that it is always obvious where a def/val comes from, some naming policy is required.
+ * Without, users would very fast have the feeling of magic and uncertainty.
+ *
+ * Also, as a best practice, when configuring your mixed natures,
+ * you should always add the optional "overwrite" keyword when you intend to overwrite something.
+ * That way, the compiler will understand your intend and can give a meaningful error message,
+ * if for some reason there is no such def to override.
+ *
+ * Naming policy: Each nature should only define new methods in its own namespace.
+ * Example: The Nature "MyOwnNature" should create all def's with the prefix "myOwn_", the "Nature" suffix should not be part of it.
+ * Of course, "myOwn" would be also ok as a name, if only one def is needed and the name is already self describing,
+ * like e.g. "OutputDirNature" and the def "outputDir".
+ *
+ */
+trait Nature {
+
+  /**
+   * Create target(s) in the scope of the given (implicit) project.
+   * Any implementation has to take care of calling super.createTargets.
+   */
+  def createTargets(implicit project: Project): Seq[Target] = Seq()
+
+}
+----
+
+=== OutputDirNature trait
+
+[source,scala]
+----
+/**
+ * Basic nature, configuring an output directory.
+ */
+trait OutputDirNature extends Nature {
+  /**
+   * The primary output directory.
+   */
+  def outputDir: String = "target"
+}
+----
+
+=== CleanNature trait
+
+[source,scala]
+----
+/**
+ * Nature adding a "clean" target which removes an output directory.
+ */
+trait CleanNature extends OutputDirNature {
+  /**
+   * The target name.
+   */
+  def clean_targetName: String = "clean"
+    
+  // add a new target "phony:clean" which utilizes Ant delete task to remove the dir defined in OutputDirNature.outputDir
+  abstract override def createTargets(implicit project: Project) = super.createTargets(project) ++
+    Seq(Target("phony:" + clean_targetName) exec {
+      AntDelete(dir = Path(outputDir))
+    })
+}
+----
+
+As you can see, no magic at all.
+The `createTargets` methods create normal targets.
+Pure Scala mixins on top of an already powerful buildsystem. 
+
+Stay tuned,
+
+Tobias

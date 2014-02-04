@@ -1,0 +1,17 @@
+= SBuild Eclipse Plugin 0.2.0
+Tobias Roeser
+2012-10-31
+:jbake-type: post
+:jbake-status: published
+:summary: SBuild Eclipse Plugin 0.2.0 was released and includes a graphical Workspace Project Alias Editor. In can be now installed from an Update-Site.  
+
+Version *0.2.0* of the SBuild Eclipse Plugin was release on 2012-10-30.
+
+You can install it now from its new http://sbuild.tototec.de/svn/eclipse-update-site/stable[Update Site].
+
+New in this version is the graphical Workspace Project Alias Editor to configure and resolve project dependencies from other projects in the Eclipse Workspace.
+There is also support to use regular expressions in the aliases, to minimize the need to adapt them, when versions change.
+
+Best wishes,
+
+Tobias Roeser

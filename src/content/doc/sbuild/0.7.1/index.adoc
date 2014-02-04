@@ -1,12 +1,13 @@
-= Documentation
+= SBuild Reference Manual 0.7.1
 :author: Tobias Roeser
 :revdate: 2014-01-20
 :jbake-type: page
 :jbake-status: published
 :SBuildVersion: 0.7.1
+:sbuildversion: 0.7.1
 :numbered:
 :idprefix:
-:toclevels: 3
+:toclevels: 2
 
 This is the Documentation for SBuild {SBuildVersion}. 
 link:{path_doc_sbuild}[_Not the version you are looking for?_]

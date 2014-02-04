@@ -1,0 +1,16 @@
+= Preparations for first release
+Tobias Roeser
+2012-07-12
+:jbake-type: post
+:jbake-status: published
+:summary: I'm very happy with the current state of SBuild, so I think, it is time to make a first release.
+
+I'm very happy with the current state of SBuild, so I think, it is time to make a first release.
+
+What is needed before that release? Windows batch scripts, to run SBuild under Windows as well. And of course more documentation.
+
+As I use SBuild in various own project, it will be a very stable first release.
+
+So, stay tuned,
+
+Tobias Roeser

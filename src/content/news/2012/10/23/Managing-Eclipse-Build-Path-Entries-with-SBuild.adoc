@@ -1,0 +1,157 @@
+= Managing Eclipse Build Path Entries with SBuild
+Tobias Roeser
+2012-10-23
+:jbake-type: post
+:jbake-status: published
+:summary: Managing the Classpath-Entries of a Java project is not an trivial task. This article shows you, how you can manage your Eclipse project build path with SBuild and the SBuild Eclipse Plugin.
+
+Managing the Classpath-Entries of a Java project is not an trivial task.
+The simplest way is, to put your JARs in the project directory (or a sub directory) and add them to the build path.
+Of couse this has many limitiations.
+If you work in a team, you need to add them to you version control system, which is no good idea.
+If you have many projects, you end up having many duplicated JAR in each project.
+What was the version of that JAR again? Where does it came from and where to go to get an updated version?
+
+There are better alternatives!
+If you are a Maven user, you can install one of the two Maven Eclipse integration plugins (m2e, IAM) available, but of course, both require, that you first setup your Project to build properly with Maven, not an easy task.
+Many other solutions also integrate into Eclipse, some do better, others even worse...
+
+== The Problem
+
+Managing the Classpath-Entries of a Java project is not an trivial task. 
+The simplest way is, to put your JARs in the project directory (or a sub directory) and add them to the build path.
+Of couse this has many limitiations.
+If you work in a team, you need to add them to you version control system, which is no good idea.
+If you have many projects, you end up having many duplicated JAR in each project.
+What was the version of that JAR again? Where does it came from and where to go to get an updated version?
+
+There are better alternatives!
+If you are a Maven user, you can install one of the two Maven Eclipse integration plugins ("m2e":http://eclipse.org/m2e/, "IAM":http://wiki.eclipse.org/IAM) available, but of course, both require, that you first setup your Project to build properly with Maven, not an easy task. Many other solutions also integrate into Eclipse, some do better, others even worse...
+
+
+== SBuild to the rescue
+
+link:/[SBuild] is a very new buildsystem for Java projects, but it is already stable and can handle large multi-projects.
+To manage your project build path with SBuild, you are not required to convert you whole project tree to SBuild (as, e.g. Maven does).
+SBuild is a very flexible build tool which lets you do with it, whatever you want, and does not enforce you to implement a set of specific conventions.
+
+In the rest of this article, I will show you, how you can manage your Eclipse project build path with SBuild and the SBuild Eclipse Plugin.
+This article is not about building your project with SBuild.
+
+To install SBuild, download the SBuild Distribution, e.g. the http://sbuild.tototec.de/sbuild/attachments/download/19/sbuild-0.1.4-dist.zip[sbuild-0.1.4-dist.zip] from the link:{path_download_sbuild}[SBuild download page] and unpack it into a local directory.
+If you are under Windows, you need to add an environment variable `SBUILD_HOME` pointing to that local directory (containing the content of the ZIP file).
+For further instructions, how to install SBuild, read page link:{path_doc_sbuild_current}#Installation[Installation].
+
+== Describe your dependencies
+
+We start with describing our dependencies.
+SBuild provides various options to retrieve your dependencies, out of the box.
+Of course, you can reference local JARs, but you can also use Maven repositories.
+In fact, you can access any resource available via HTTP protocol and can even reference resources located inside a ZIP file, which itself is located on the internet.
+
+All your dependencies are declared in SBuilds build file, which by default has the name @SBuild.scala@. Here is an example: 
+
+[source,scala]
+----
+import de.tototec.sbuild._
+import de.tototec.sbuild.TargetRefs._
+
+class SBuild(implicit project: Project) {
+
+  SchemeHandler("http", new HttpSchemeHandler())
+  SchemeHandler("mvn", new MvnSchemeHandler())
+  SchemeHandler("zip", new ZipSchemeHandler())
+
+  val dependencies =
+    "libs/a-local-jar.jar" ~
+    "http://cmdoption.tototec.de/cmdoption/attachments/download/3/de.tototec.cmdoption-0.1.0.jar" ~
+    "mvn:org.slf4j:slf4j-api:1.7.0" ~
+    "zip:file=junit4.10/junit-4.10.jar;archive=http://cloud.github.com/downloads/KentBeck/junit/junit4.10.zip"
+    
+  ExportDependencies("eclipse.classpath", dependencies)
+
+}
+----
+
+Above, you see a minimal SBuild build file with four declared dependencies. Each of them uses a different name scheme. 
+
+The first one (line 11) uses the "file" scheme, which is the default and therefore the prefix "file:" is (and can) omitted. 
+
+The second one (line 12) uses the "http" scheme, which is registered in line 6, and used the HTTP protocol to download dependencies. (The `HttpSchemeHandler` is used.)
+
+The third dependency (line 13) used the "mvn" scheme, registered in line 7, which allows you to access resources in Maven repositories through the typical `Group:Artifact:Version` coordinates.
+Per default, the central Maven repository is used, but you can configure the `MvnSchemeHandler` further, to e.g. add more repositories.
+
+The fourth dependency (line 14) is a file inside a ZIP file and uses the "zip" scheme, registered in line 8, to access it.
+The `file=<name>` part describes the file inside ZIP file.
+The `archive=<archive>` part describes the location of the ZIP file, which may be any of the supported schemes, here the "http" scheme was used. (The `ZipSchemeHandler` is used.)
+
+Finally, you want to access your dependencies from Eclipse, so we export them in line 16 and thus make it accessible from the SBuild Eclipse Plugin.
+
+Each of the SchemeHandler registered above can be further customized.
+The name you give to your scheme is up to you, as long it is unique and is not "file" or "phony", which are the built-in schemes of SBuild.
+You can even register the same SchemeHandler under different scheme names, e.g. to have two different configurations. Here is an example:
+
+[source,scala]
+----
+  // Maven artifacts with OSGi bundles maintained by Springsource
+  SchemeHandler("mvn-osgi", new MvnSchemeHandler(repos = 
+    Seq("http://repository.springsource.com/maven/bundles/release", "http://repository.springsource.com/maven/bundles/external")))
+
+  val osgiDependencies = "mvn-osgi:org.slf4j:com.springsource.slf4j.api:1.6.1"
+----
+
+
+== And bring them into Eclipse
+
+*_Update 2012-11-01:* With the current version 0.2.0 there is also an http://sbuild.tototec.de/svn/eclipse-update-site/stable[Update site] to install SBuild Eclipse Plugin.
+In this case, you can ignore the next parapraph._
+
+If you do not have done it before, now is the time to install the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/SBuildEclipsePlugin[SBuild Eclipse Plugin].
+Download the plugin JAR http://sbuild.tototec.de/sbuild/attachments/download/23/de.tototec.sbuild.eclipse.plugin-0.1.4.jar[de.tototec.sbuild.eclipse.plugin-0.1.4.jar] from the http://sbuild.tototec.de/sbuild/projects/sbuild/files[SBuild download homepage] and place it into the "dropins" folder of your Eclipse installation.
+After that you need to (re)start your Eclipse.
+To function properly, you need to tell your Eclipse the location of the SBuild installation.
+Open the Eclipse Preferences -> Java -> Build Path -> Classpath Variables and add the variable `SBUILD_HOME`, pointing to the installation directory of SBuild.
+For further instructions read the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/SBuildEclipsePlugin#Installation[installation instructions for the SBuild Eclipse Plugin].
+
+.Adding a new Classpath Variable SBUILD_HOME
+image::ClasspathVariables.png[Adding a new Classpath Variable SBUILD_HOME,632]
+
+Open you Project Properties dialog and select the "Java Build Path" settings page.
+Open the third tab "Libraries" on the left, and click "Add Library...". Select "SBuild Libraries".
+You can leave all configuration settings on their defaults, for now, an click "Finish", to complete.
+Now, the SBuild Eclipse Plugin will first read you project and retrieves all dependencies.
+This might take a while.
+
+.Add the SBuild Libraries Classpath Container to the project
+image::AddLibrary.png[Add the SBuild Libraries Classpath Container to the project,645]
+
+After you added the "SBuild Libraries" classpath container to your Java project, you should see a new entry "SBuild Libraries" in your Package Explorer. 
+
+.The expanded SBuild Libraries in the Package Explorer
+image::PackageExplorer.png[The expanded SBuild Libraries in the Package Explorer]
+
+*Congratulations!*
+You just enabled yourself an powerful way to manage your dependencies with SBuild. 
+You have now a very compact configuration which is also the documentation of your projects dependencies.
+You not only know your project dependencies, you now also know and documented where they come from.
+You should add this configuration to your version control system and any team mate should be able to reproduce the same build path as you have.
+
+
+== Further readings and information
+
+I hope, I could give you a taste of the posibilities and flexiblity of SBuild.
+The Eclipse Plugin can do more, e.g. workspace resolution.
+I invite you to test SBuild and the SBuild Eclipse Plugin.
+
+Here is the complete example Project: link:ExampleProject.zip[]
+
+You can find more information on the link:/[SBuild homepage].
+
+
+
+_Update 2012-11-01: Added Link to Eclipse Update Site._
+
+_Update 2012-11-03: Added ZIP with ExampleProject._
+
+_Update 2012-11-07: Removed notice about a refresh bug, that is fixed meanwhile._

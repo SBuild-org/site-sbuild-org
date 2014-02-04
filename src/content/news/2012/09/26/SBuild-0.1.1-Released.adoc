@@ -1,0 +1,22 @@
+= SBuild 0.1.1 Released
+Tobias Roeser
+2012-09-26
+:jbake-type: post
+:jbake-status: published
+:summary: We are happy to announce the Release of SBuild 0.1.1, the best SBuild you ever got. 
+
+// TODO: link to 0.1.1
+We are happy to announce the Release of *SBuild 0.1.1*, the best SBuild you ever got. 
+
+Among a lot of new features and improvements, the most important new features are the brand new *SBuild Eclipse Plugin*,
+that provides a classpath container based on the SBuild build file and experimental workspace resolution support,
+and better support for unit testing through the *JUnit* and *ScalaTest* addons. 
+(The JUnit Ant task was not compatible with SBuilds Ant support.)
+
+You can http://sbuild.tototec.de/sbuild/projects/sbuild/files[download SBuild here].
+
+Please test this new version and don't hesitate to give feedback as comment, forum entry or bug report.
+
+Best regards,
+
+Tobias Roeser

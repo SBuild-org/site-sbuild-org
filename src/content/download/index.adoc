@@ -4,4 +4,12 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 
-TODO
+== SBuild 0.7.1
+
+* SBuild Distribution: http://sbuild.tototec.de/sbuild/attachments/download/87/sbuild-0.7.1-dist.zip[sbuild-0.7.1-dist.zip]
+* http://sbuild.tototec.de/sbuild/projects/sbuild/files[Other downloads...]
+
+
+== Older Releases
+
+Please download older releases from http://sbuild.tototec.de/sbuild/projects/sbuild/files[sbuild.tototec.de].

@@ -1,0 +1,104 @@
+= Attached Files and Alias Schemes in SBuild 0.4
+Tobias Roeser
+2013-03-07
+:jbake-type: post
+:jbake-status: published
+:summary: This post will introduce two new features comming with SBuild 0.4: Attached Files and Alias Scheme Handlers.
+
+
+The development of *SBuild 0.4* is rather finished. We use the last days before the release for reviews and migrate as much real world projects to 0.4 as possible.
+
+I have to say I'm very pleased with the progress of the development.
+In the last days, we improved SBuild's internal dependency traversal algorithm and data structures.
+It is now very fast, even on Windows.
+By migrating a large OSGi Project from Maven (Cmvn) to SBuild, I had to convert over 60 bundle projects to SBuild.
+The migration went very well.
+The complete tool chain is now covered by one build system, SBuild, replacing various tools (Maven, Cmvn, shell scripts) and automating previously manual tasks into simple targets.
+Feels good, to have full control over a build, from checkout to release.
+
+But, todays post is mainly to introduce two new features of SBuild 0.4.
+
+== Attached Files
+
+I mentioned it already in the link:/news/2013/02/23/Target-caching-in-SBuild-0.4.html[previous post].
+With SBuild 0.4, you have the ability to attach additional files to the context of a target execution.
+So, if your target produces more than one file, this is the way to make SBuild aware of them.
+The most important thing is, that attached files are exported to the direct dependent targets.
+Those can access attached files either by using `TargetContext.fileDependencies` to get all files including the attached ones or by using `TargetRef.files` (or `TargetRefs.files`) to selectively access files and attached files from only one (or some) dependencies. 
+
+Each target can attach files through its target context via `TargetContext.attachFile`.
+One typical use case for attached files is a target that generates or processes files.
+
+The new scan scheme handler, I introduced in my last post, uses exactly that new feature.
+All found files will be attached to the target context. Direct depedendent targets might access them.
+
+The following code shows how to access files of dependencies:
+
+[source,scala]
+----
+val srcDir = "src/main/java"
+val resDir = "src/main/resources"
+
+Target("phony:print-files") dependsOn s"scan:${srcDir}" ~ s"scan:${resDir}" exec { ctx: TargetContext =>
+
+  println("All found files (via TargetContext.fileDependencies): " + ctx.fileDependencies.mkString(", "))
+
+  println("All sources (via TargetRef.files): " + s"scan:${srcDir}".files.mkString(", "))
+
+  println("All resources (via TargetRef.files): " + s"scan:${resDir}".files.mkString(", "))
+}
+----
+
+
+The following code shows how you can attach files inside your target:
+
+[source,scala]
+----
+Target("phony:process-configs") dependsOn s"scan:src/main/config;regex=.*\.template$" exec { ctx: TargetContext =>
+  ctx.fileDependencies.foreach { file =>
+    val processedFile = ... // somehow generate or process the file
+    ctx.attachFile(processedFile) 
+  }
+}
+----
+
+== Alias Scheme Handlers
+
+The already powerful scheme handler mechanism got a small change.
+The `SchemeHandler` trait was split into `SchemeHandler` and `SchemeResolver`, whereas the latter extends to former.
+This split allows you to write minimal "alias" schemes which only process the target name but do not resolve it.
+
+To have an easy shortcut to depend on various Spring Framework artifacts, one could write the following "spring" scheme handler:
+
+[source,scala]
+----
+SchemeHandler("spring", new SchemeHandler {
+  /** Delegate resolving of dependencies to "mvn" scheme handler. */
+  override def localPath(path: String): String = s"mvn:org.springframework:spring-${path}:3.2.1.RELEASE"
+})
+
+val springDependencies = "spring:core" ~ "spring:beans" ~ "spring:context" ~ "spring:transaction"
+
+Target("phony:compile") dependsOn springDependencies ~ otherDependencies exec {
+  // compile it
+}
+----
+
+Another good candidate for an alias scheme would be a "local" scheme, to easily point to built artifacts of other local modules.
+E.g. in the OSGi project I mentioned in the beginning, I have a scheme like this:
+
+[source,scala]
+----
+val defaultVersion = "0.5.1.9000"
+SchemeHandler("local", new SchemeHandler {
+  override def localPath(path: String): String = path.split(":", 2) match {
+    case Array(artifact, version) => s"../${artifact}/target/${artifact}-${version}.jar"
+    case Array(artifact) => s"../${artifact}/target/${artifact}-${defaultVersion}.jar"
+  }
+})
+----
+
+Wishing you an always fast and reliable build.
+
+Regards, +
+Tobias Roeser

@@ -1,0 +1,25 @@
+= SBuild Eclipse Plugin 0.4.1
+Tobias Roeser
+2013-04-29
+:summary: SBuild Eclipse Plugin 0.4.1 released, fixes classpath container update issues and improved speed.
+:jbake-type: post
+:jbake-status: published
+
+The next release is out the door. 
+
+link:SBuildEclipsePlugin_0_4_1[SBuild Eclipse Plugin 0.4.1] finally fixed a long standing bug regarding the refresh of the classpath container.
+Now, classpath container refreshes should always work, especially, after required projects (via workspace resolution) were closed or opened.
+
+This version also improves the SBuild embedder, which now is only loaded once to reduce cosumed memory and improves speed.
+
+If you are a user of SBuild, please let me know!
+I'm interested in all of your use cases and workflows.
+Also, if you tried SBuild but had issues, let me know about them, so we can improve SBuild.
+If you heard about SBuild because you wanted to close a gap, other build systems leave open, tell us,
+e.g. by writing in the https://sbuild.tototec.de/sbuild/projects/sbuild/boards[forums] or by creating a https://sbuild.tototec.de/sbuild/projects/sbuild/issues/new[ticket].
+
+Hope, SBuild and SBuild Eclipse Plugin improved also your workflow and makes coding more fun.
+
+Regards, +
+Tobias
+

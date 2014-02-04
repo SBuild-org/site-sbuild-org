@@ -1,6 +1,6 @@
 = Plugins
 Tobias Roeser
-2013-12-16
+2014-02-04
 :jbake-type: page
 :jbake-status: published
 
@@ -11,42 +11,37 @@ If you are interested in writing your own SBuild Plugin, please visit the Plugin
 
 == Plugins
 
-Here, you can find a list of known SBuild Plugins. You you wrote a plugin and want it to be listed here, please contact us.
+Here, you can find a list of known SBuild Plugins. You wrote a plugin and want it to be listed here? Please contact us.
 
-[cols="2,4,1,1,1,1",options="header"]
+[cols="2,4,1,1",options="header"]
 |===
 | Plugin Name
 | Description
-| Latest Version
-| SBuild Version
 | License
 | Links
 
-| JBake Plugin
+| https://github.com/SBuild-org/sbuild-jbake[JBake Plugin^]
 | Integrates the static page generator JBake
-| 
-| 0.7.1
 | Apache 2.0
-| https://github.com/SBuild-org/sbuild-jbake[Github]
+| https://github.com/SBuild-org/sbuild-jbake[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.jbake[Maven]
 
-| SBuild Plugin Plugin
+| https://github.com/SBuild-org/sbuild-plugin-plugin[SBuild Plugin Plugin^]
 | A Plugin to create SBuild Plugins
-| 0.2.1
-| 0.7.1
 | Apache 2.0
-| https://github.com/SBuild-org/sbuild-plugin-plugin[Github]
+| https://github.com/SBuild-org/sbuild-plugin-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.sbuildplugin[Maven]
 
-| Maven Deploy Plugin
+| https://github.com/SBuild-org/sbuild-maven-deploy[Maven Deploy Plugin^]
 | Allows deployments to Maven repositories like the Sonatype OSS Nexus Repository
-|
-| 0.7.1
 | Apache 2.0
-| https://github.com/SBuild-org/sbuild-maven-deploy[Github]
+| https://github.com/SBuild-org/sbuild-maven-deploy[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.mavendeploy[Maven]
 
-| Ather Plugin
+| https://github.com/SBuild-org/sbuild-aether[Aether Plugin^]
 | Provides a Aether-based SchemeHandler, that can resolve transitive dependencies from Maven repositories.
-| 
-| 0.7.1
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-aether[Github]
+
+| https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Asciidoctor Plugin^]
+| Integrated the document rendering engine Asciidoctor into SBuild.
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.asciidoctor[Maven]
 |====

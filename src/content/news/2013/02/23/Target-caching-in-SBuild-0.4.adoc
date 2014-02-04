@@ -1,0 +1,88 @@
+= Target caching in SBuild 0.4
+Tobias Roeser
+2013-02-23
+:summary: The development of SBuild 0.4 is almost finished. SBuild 0.4.0 will provide a lot of new features. In this and some following post, I will dig a bit deeper into some of them. This todays post is about the caching mechanism and the"scan" target scheme...
+:jbake-type: post
+:jbake-status: published
+
+
+The development of SBuild 0.4 is almost finished. *SBuild 0.4.0* will provide a lot of new features. In this and some following post, I will dig a bit deeper into some of them.
+
+This todays post is about the new *caching mechanism* for phony targets and the new *"scan" target scheme* to collect files.
+
+== Background
+
+SBuild already tries to reach a requested goal as fast as possible, but, of course, without sacrifying the correctness of the result.
+Targets that don't need to be executed will be skipped.
+For file targets this is relatively easy, as the decission if a file target needs to be executed can be based on existence, and if, on the last modified attribute of the target file.
+Only if the file is missing or older than at least one dependency, it will be rebuild.
+
+Phony targets produce by-definition no single target file.
+So, without further knowledge about the details of that target definition, SBuild is not able to skip the execution of phony targets, without risking the correctness of the build result.
+
+But, as you already might have guessed, you can provide SBuild such information, so that it will be able to detect unnecessary executions of phony targets and thus will skip them.
+
+== Cacheable phony targets
+
+You can set the new `cacheable` property of a phony target, which will tell SBuild, that this target will only depend on the declared dependencies and the buildfile itselves.
+Through the cacheable flag, you tell SBuild, that if all dependencies of that target and the aggregated last modified time stamp of them are identical to those of a previous execution, then that target might be skipped.
+Whenever at least one dependency of that target changes, or an attached file (this is another new feature I will write about in a future post) or when the build file or any of its dependencies have changed, the cached state is dropped and the target will be executed.
+The most typical target you want to be cached is the "compile" target.
+
+Of course, with cacheable target you also need some manual way to drop caches and force re-execution of all cached targets.
+To flag a target which should drop all cached states, you can set the *evictCache* property of that target.
+This target is most typically the "clean" target.
+
+Here is an example:
+
+[source,scala]
+----
+Target("phony:clean").evictCache exec {
+  AntDelete(dir = Path("target"))
+}
+
+Target("phony:compile").cacheable dependsOn compileCp ~ "scan:src/main/scala" exec {
+  // compile code ...omitted for brevity
+}
+----
+
+The example above shows a minimal but already complete example for a cached phony target.
+
+As said above, to be correct when evaluating up-to-dateness, it is essential, that you declare *all* dependencies, which would influence the outcome of that target.
+Because of that, the "compile" target above declares beside the compile classpath (compileCp) also all source files (in this example all files under the `src/main/scala` directory) as dependencies.
+
+== Scanning for files
+
+To collect files you dont know beforehand, you can use the new "scan" target scheme (`ScanSchemeHandler`), which will scan a given directory for files matching a given pattern.
+If no pattern is specified, all files will be attached and will be available throw the TargetContext of the target, that declared the dependency.
+
+The following example shows the use of the scan target with a regex filter.
+
+[source,scala]
+----
+Target("phony:process-files") dependsOn "scan:src/main/resources;regex=.*\.conf" exec { ctx: TargetContext =>
+  ctx.fileTargets.map { file =>
+    // process file
+  }
+}
+----
+
+If you have many dependencies and need to selectively catch the scanned files, you can use the `TargetRef.files` method, like in this example.
+
+[source,scala]
+----
+val confFiles = "scan:src/main/resources;regex=.*\.conf"
+
+Target("phony:process-files") dependsOn otherDependency ~ confFiles exec {
+  confFiles.files.map { file =>
+    // process each .conf file found in src/main/resources
+  }
+  // do something with the other dependencies
+  // otherDependencies.files.map { file => ... }
+}
+----
+
+Hope, you find this post useful.
+
+Regards, +
+Tobias Roeser

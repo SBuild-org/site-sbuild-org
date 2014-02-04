@@ -1,0 +1,20 @@
+= SBuild Eclipse Plugin 0.4.0 - Hackathon Release
+Tobias Roeser
+2013-04-20
+:summary: A new Release of the SBuild Eclipse Plugin is available, which ensures compatibility with SBuild 0.4.0.
+:jbake-type: post
+:jbake-status: published
+
+I'm happy to announce the release of the link:SBuildEclipsePlugin_0_4_0[SBuild Eclipse Plugin 0.4.0].
+
+This version is compatible with SBuild 0.4.0 and never versions.
+Although this release does not fix all classpath update issues we know about, it is a workable solution that support the latest and greatest SBuild version.
+
+The SBuild Eclipse Plugin is available via update site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+
+This release was made, to have an up-to-date version available for participants of the http://www.dd-eclipse.de/events/?event_id=7[3. Eclipse Hackathon].
+
+Happy coding.
+
+Tobias Roeser
+

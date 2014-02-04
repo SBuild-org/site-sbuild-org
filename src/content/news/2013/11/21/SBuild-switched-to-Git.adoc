@@ -1,0 +1,32 @@
+= SBuild switched to Git
+:author: Tobias Roeser
+:revdate: 2013-11-21
+:summary: SBuild switched it's source code management from Subersion to Git.
+:jbake-status: published
+:jbake-type: post
+
+SBuild main source code repository switched from Subversion (svn) to Git. 
+With this switch, we also splitted the existing repository. 
+Only the sbuild basis projects are in the new git repository. 
+Other projects, like the SBuild Eclipse Plugin will be moved into their own git repositories in the near future.
+
+To checkout / clone the SBuild repository use the following command:
+
+----
+git clone http://sbuild.tototec.de/git/sbuild
+----
+
+There is also a HTTPS variant, but as SBuild currently uses a self signed server certificate, you need some special treatment to use it:
+
+----
+GIT_SSL_NO_VERIFY=true git clone https://sbuild.tototec.de/git/sbuild
+----
+
+Only the HTTPS variant supports pushing (registered SBuild developers only) whereas the read access does not require any authentication.
+
+There is also a (read-only) mirror repository on Github: https://github.com/SBuild-org/sbuild-mirror.
+
+If you have problems accessing the new repositories, please report!
+
+Best regards, +
+Tobias
