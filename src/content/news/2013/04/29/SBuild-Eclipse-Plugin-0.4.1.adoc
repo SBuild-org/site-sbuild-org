@@ -16,7 +16,7 @@ If you are a user of SBuild, please let me know!
 I'm interested in all of your use cases and workflows.
 Also, if you tried SBuild but had issues, let me know about them, so we can improve SBuild.
 If you heard about SBuild because you wanted to close a gap, other build systems leave open, tell us,
-e.g. by writing in the https://sbuild.tototec.de/sbuild/projects/sbuild/boards[forums] or by creating a https://sbuild.tototec.de/sbuild/projects/sbuild/issues/new[ticket].
+e.g. by writing in the http://sbuild.tototec.de/sbuild/projects/sbuild/boards[forums] or by creating a http://sbuild.tototec.de/sbuild/projects/sbuild/issues/new[ticket].
 
 Hope, SBuild and SBuild Eclipse Plugin improved also your workflow and makes coding more fun.
 

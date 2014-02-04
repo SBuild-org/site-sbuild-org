@@ -2,13 +2,16 @@
 	
 	<#include "menu.ftl">
 
+    <div class="hero-unit">This page will be the new homepage for SBuild and is currently under development! Please visit also <a href="http://sbuild.tototec.de">sbuild.tototec.de</a>.</div>
+
 <div class="hero-unit">
 	<h1>No more magic for your builds!</h1>
 
-	<p class="lead">SBuild provides a magic less build configuration for
+    <p/>
+	<p>SBuild provides a magic less build configuration for
 		reproducable builds.</p>
 		
-	<p class="lead">SBuild is a fast and reliable build system most suitable for
+	<p>SBuild is a fast and reliable build system most suitable for
 		projects targeting the JVM. SBuild itself and the buildfiles are
 		written in Scala. But typical build system maintenance task require
 		almost no special Scala knowledge.

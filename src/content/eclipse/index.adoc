@@ -1,0 +1,93 @@
+= SBuild Eclipse Plugin
+Tobias Roeser
+2014-02-04
+:jbake-type: page
+:jbake-status: published
+:eclipsepluginversion: 0.4.2
+:toc:
+
+The SBuild Eclipse Plugin extends your Eclipse IDE with SBuild support.
+
+toc::[]
+
+Current version is link:SBuildEclipsePlugin_0_4_2[0.4.2].
+
+== Description
+
+SBuild Eclipse Plugin integrates SBuild into the Eclipse IDE.  This plugin provides various featues:
+
+* SBuild Classpath Container - Access your SBuild project dependencies easily from Eclipse 
+* Download of Missing Dependencies - Dependencies will be automatically downloaded
+* Workspace Resolution - Dependencies, also open in the Eclispe Workspace can be referenced directly
+* Change Detection -  Automatic update of the classpath container when the buildfile changes
+
+These features are planned to be implemented:
+
+* Project Introspection - Inspect the SBuild project, list targets, show plugins 
+* Target Execution - Execution of SBuild targets
+
+== Requirements
+
+* http://eclipse.org[Eclipse 3.4] or never
+* SBuild 0.4.0 or newer
+
+== Installation via Update-Site
+
+Installation via Update-Site is the preferred installation routine.
+
+*Update-Site URL: http://sbuild.tototec.de/svn/eclipse-update-site/stable*
+
+image::InstallNewSoftware.png[Install new Software,400]
+
+Alternativelly, you can http://sbuild.tototec.de/sbuild/projects/sbuild/files[download] the SBuild Eclipse Plugin and place it into the "dropins" folder of your Eclipse Installation.
+
+== Eclipse Setup
+
+To function properly, you need to tell your Eclipse the location of the SBuild installation.
+Open the Eclipse Preferences -> Java -> Build Path -> Classpath Variables and add the variable `SBUILD_HOME`, pointing to the installation directory of SBuild. 
+
+image::ClasspathVariables.png[Classpath Variable,400]
+
+== Project Setup
+
+=== Export the required dependencies from your buildfile
+
+You need to export the required classpath before you can access it from within Eclipse.
+See `ExportDependencies` for details.
+
+[source,scala]
+----
+val dependencies = // your dependencies you want to access from within Eclipse
+
+ExportDependencies("eclipse.classpath", dependencies)
+----
+
+Line 3 shows how to export the dependencies under the name "eclipse.classpath" (which is the preferred default).
+
+=== Add SBuild Libraries to the Project
+
+To add the "SBuild Libraries" classpath container to your Eclipse project, open the _Project Preferences_ -> _Java Build Path_ -> _Libraries_ and press the _Add Library..._ Button. 
+
+image::AddLibrary.png[Add Library,400]
+
+Choose "SBuild Libraries" and press _Next_.
+In the next dialog page, you have the option to configure some settings, but normally you can just press _Finish_.
+You can always reach and modify these settings later.
+
+image::EditLibrary.png[Edit Library,400]
+
+The configurable settings are:
+
+* Name of SBuild buildifle
+* Choose exported dependencies
+* Update Policy
+* Workspace Project aliases
+
+
+== Have fun
+
+*Congratulations!* 
+
+You now have added the "SBuild Libraries" classpath container to your project.
+You should see a "SBuild Libraries" entry in your _Package Explorer_.
+Wenn you expand that tree node, you should see all your (exported) dependencies.
