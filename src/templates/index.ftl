@@ -18,7 +18,7 @@
 	  <a class="btn btn-success btn-large" role="button" href="download/sbuild/0.7.1/sbuild-0.7.1-dist.zip"><strong>Download SBuild 0.7.1</strong></a>
 	</div>
 	<div class="span5 text-left">
-      <a class="btn btn-large" role="button" href="documentation/current">Learn more</a>
+      <a class="btn btn-large" role="button" href="doc/sbuild">Learn more</a>
     </div>
     </div>
     

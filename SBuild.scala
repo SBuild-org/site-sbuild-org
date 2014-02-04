@@ -1,7 +1,8 @@
 import de.tototec.sbuild._
 
 @version("0.7.0.9000")
-@classpath("scan:../jbake/org.sbuild.plugins.jbake;regex=org\\.sbuild\\.plugins\\.jbake-[0-9.]*\\.jar")
+@classpath("mvn:org.sbuild:org.sbuild.plugins.jbake:0.1.1")
+// @classpath("../jbake/org.sbuild.plugins.jbake/target/org.sbuild.plugins.jbake-0.1.1.jar")
 class SBuild(implicit _project: Project) {
 
   Target("phony:clean").evictCache exec {
@@ -12,7 +13,12 @@ class SBuild(implicit _project: Project) {
   Plugin[JBake] configure { _.copy(
     sourceDir = Path("src"),
     targetDir = Path("target"),
-    jbakeVersion = JBakeVersion.Packaged("2.2.1-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.2.1-SNAPSHOT-bin.zip")
+//    jbakeVersion = JBakeVersion.Packaged("2.2.1")
+    jbakeVersion = JBakeVersion.Packaged("2.3.0-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.3.0-SNAPSHOT-bin.zip")
    ) }
+
+  Target("phony:copy-heavy-assets") exec {
+    Path("src/heavy-assets") copyTo Path("target")
+  }
 
 }
