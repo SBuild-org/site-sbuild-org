@@ -48,6 +48,10 @@ Open the Eclipse Preferences -> Java -> Build Path -> Classpath Variables and ad
 
 image::ClasspathVariables.png[Classpath Variable,400]
 
+[NOTE]
+Mac homebrew users will find the installation path of SBuild under `/usr/local/Cellar/sbuild/${VERSION}/libexec`, e.g. `/usr/local/Cellar/sbuild/0.7.1/libexec`.
+
+
 == Project Setup
 
 === Export the required dependencies from your buildfile
@@ -78,7 +82,7 @@ image::EditLibrary.png[Edit Library,400]
 
 The configurable settings are:
 
-* Name of SBuild buildifle
+* Name of SBuild buildfile
 * Choose exported dependencies
 * Update Policy
 * Workspace Project aliases
