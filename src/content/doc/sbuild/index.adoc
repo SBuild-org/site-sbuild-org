@@ -19,4 +19,4 @@ Tobias Roeser
 
 == Older Versions
 
-Information and documentation about previous versions can be found to the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki[SBuild Redmine] page. 
+Information and documentation about previous versions can be found on the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki[SBuild Redmine] page.
