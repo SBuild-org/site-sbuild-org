@@ -17,7 +17,11 @@ You can use the following resources to collaborate and contribute:
 
 *Bug tracker*
 
-* https://sbuild.tototec.de/sbuild/projects/sbuild/issues[Redmine] - We used the Redmine ticket system, but plan to migrate to Github. Until the migration is finished, you can only create tickets here. 
-* _In Progress: Github_ - After the migration is finished, we will accept isses and pull requests via Github. Until the migration to Github is finished, we disabled the Github issue tracker for public use.
+* https://github.com/SBuild-org/sbuild/issues[Github Issue Tracker]
+* https://sbuild.tototec.de/sbuild/projects/sbuild/issues[_Outdated: Redmine Issue Tracker_] - We previously used the Redmine ticket system, but migrated all tickets to Github. You can access the old issues but to comment or create new tickets, please use the Github issue tracker.
 
 Previously, we also had https://sbuild.tototec.de/sbuild/projects/sbuild/boards[*Forums*], but we plan to shut them down. Please use one of the other community channels, especially the mailing lists. 
+
+*Twitter*
+
+SBuild is also on Twitter as https://twitter.com/SBuildOrg[@SBuildOrg]
