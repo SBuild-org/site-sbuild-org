@@ -9,7 +9,7 @@
 
     <p/>
 	<p>SBuild provides a magic less build configuration for
-		reproducable builds.</p>
+		reproducible builds.</p>
 		
 	<p>SBuild is a fast and reliable build system most suitable for
 		projects targeting the JVM. SBuild itself and the buildfiles are
