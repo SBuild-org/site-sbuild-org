@@ -18,7 +18,7 @@
 	</p>
 	<div class="row">
 	<div class="span5 text-right">
-	  <a class="btn btn-success btn-large" role="button" href="download/sbuild/0.7.1/sbuild-0.7.1-dist.zip"><strong>Download SBuild 0.7.1</strong></a>
+	  <a class="btn btn-success btn-large" role="button" href="http://sbuild.tototec.de/sbuild/attachments/download/87/sbuild-0.7.1-dist.zip"><strong>Download SBuild 0.7.1</strong></a>
 	</div>
 	<div class="span5 text-left">
       <a class="btn btn-large" role="button" href="doc/sbuild">Learn more</a>
