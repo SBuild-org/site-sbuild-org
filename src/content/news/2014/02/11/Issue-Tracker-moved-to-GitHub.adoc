@@ -1,0 +1,19 @@
+= Issue Tracker moved to GitHub
+:author: Tobias Roeser
+:revdate: 2014-02-11
+:jbake-type: post
+:jbake-status: published
+:summary: We moved our issue tracker from Redmine to GitHub. All existing tickets and milestone mere successfully migrated.
+
+Today, we migrated our issue tracking from our initial Redmine system to https://github.com/SBuild-org/sbuild/issues[GitHub's issue tracker]. 
+With this step, we logically follow our link:/news/2013/12/03/All-SBuild-repositories-are-now-hosted-on-GitHub.html[previous move], the migration of our source code repositories to GitHub.
+
+We hope, to make collaboration easier for our users, and look forward to our first pull requests.
+Also, with this move, we lower the maintenance burden for our infrastructure and open up for more collaborative administration tasks.
+
+In the future, we will also replace the Redmine base documentation with a brand new web page. 
+Also the forums will be replaced by the new mailing lists. 
+Please refer to the link:/community.html[Community page], for more information how to contribute and get in touch. 
+
+Stay tuned, +
+your SBuild team

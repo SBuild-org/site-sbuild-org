@@ -1,0 +1,39 @@
+= SBuild - the magic-free yet powerful build tool
+:jbake-type: index2
+:jbake-status: published
+
+== SBuild - the magic-free yet powerful build tool
+
+SBuild is a http://scala-lang.org/[Scala]-based open source build tool with a focus on speed, flexibility and reproducibility.
+
+
+=== Speed
+
+By parallel execution of build steps and automatic change detection SBuild enables very short build times and rapid incremental builds.
+
+Project scripts will be automatically compiled on the first run. Subsequent SBuild invocations will execute these compiled scripts almost instantly.   
+
+=== Standardized Projects plus Flexibility  
+
+With a growing number of available plugins SBuild encourages standardized project setups, but without compromising flexibility. 
+
+=== Magic free
+
+SBuild does not make any assumptions about your build environment. It does not guess settings or additional buildfiles. 
+You can always know what it will do based on one single entry point: the buildfile.
+So does your co-worker or your CI Server. 
+
+We believe, this is a requirement to achieve reproducible builds over time. 
+
+=== Easy integration of existing tools
+
+SBuild integration capabilities allow tools like Ant tasks, Eclipse Aether (Maven) or Adept to integrate seamlessly. 
+
+=== Open
+
+SBuild is developed and published under the http://www.apache.org/licenses/LICENSE-2.0[Apache License, Version 2.0].
+The source code is hosted publicly on https://github.com/SBuild-org/sbuild[GitHub].
+
+You can ask questions on the mailing lists (https://groups.google.com/forum/#!forum/sbuild-user[[1]], https://groups.google.com/forum/#!forum/sbuild-dev[[2]]), irc://irc.freenode.org/#sbuild[IRC], or https://twitter.com/SBuildOrg[Twitter].
+You can report bugs or new feature ideas on our issue tracker on https://github.com/SBuild-org/sbuild/issues[GitHub].
+And any kind of contribution, be it pull requests, ideas, documentation or any other feedback is much appreciated.

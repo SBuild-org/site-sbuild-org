@@ -14,8 +14,8 @@ Industriestraße 22 +
 Telefon: +49 (0)341 - 39 29 08 65 +
 E-Mail: info <@> tototec.de
 
-Follow SBuild on Github: http://github.org/SBuild-org[@SBuild-org] +
-Follow Tobias Roeser on Twitter: http://twitter.com/TobiasRoeser[@TobiasRoeser], on Github http://github.org/lefou[@lefou]
+Follow SBuild on Twitter: https://twitter.com/SBuildOrg[@SBuildOrg], on Github: https://github.org/SBuild-org[@SBuild-org] +
+Follow Tobias Roeser on Twitter: https://twitter.com/TobiasRoeser[@TobiasRoeser], on Github: https://github.org/lefou[@lefou]
 
 IRC (freenode.net): #sbuild
 

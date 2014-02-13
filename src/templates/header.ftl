@@ -2,11 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SBuild</title>
+    <title><#if (content.title)??><#escape x as x?xml>${content.title} - </#escape></#if>SBuild</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <meta name="keywords" content="">    
+    <meta name="keywords" content="">
+
+    <#if (content.twitter_card)?? || twitter_card??>
+	<!-- TWitter card -->
+	<#if (content.twitter_card)??><meta name="twitter:card" content="${content.twitter_card}">
+	<#else><meta name="twitter:card" content="${twitter_card}"></#if>
+	<#if (content.twitter_site)??><meta name="twitter:site" content="${content.twitter_site}"></#if>
+	<#if (content.twitter_creator)??><meta name="twitter:creator" content="${content.twitter_creator}"></#if>
+	<#if content.twitter_title??><meta name="twitter:title" content="${content.twitter_title}">
+	<#else><meta name="twitter:title" content="${content.title}"></#if>
+	<#if content.twitter_description??><meta name="twitter:description" content="${content.twitter_description}">
+	<#else>
+	  <#if content.summary??><meta name="twitter:description" content="${content.summary}"></#if>
+	</#if>
+	<#if content.twitter_image??><meta name="twitter:image" content="${content.twitter_image}"></#if>
+	</#if>        
 
     <!-- Le styles -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">

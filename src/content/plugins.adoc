@@ -26,7 +26,7 @@ Here, you can find a list of known SBuild Plugins. You wrote a plugin and want i
 | https://github.com/SBuild-org/sbuild-aether[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.aether[Maven]
 
 | https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Asciidoctor Plugin^]
-| Integrated the document rendering engine Asciidoctor into SBuild.
+| Integrates the document rendering engine Asciidoctor into SBuild.
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.asciidoctor[Maven]
 

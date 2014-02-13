@@ -18,7 +18,7 @@ SBuild Eclipse Plugin integrates SBuild into the Eclipse IDE.  This plugin provi
 
 * SBuild Classpath Container - Access your SBuild project dependencies easily from Eclipse 
 * Download of Missing Dependencies - Dependencies will be automatically downloaded
-* Workspace Resolution - Dependencies, also open in the Eclispe Workspace can be referenced directly
+* Workspace Resolution - Dependencies, also open in the Eclipse Workspace can be referenced directly
 * Change Detection -  Automatic update of the classpath container when the buildfile changes
 
 These features are planned to be implemented:
@@ -28,7 +28,7 @@ These features are planned to be implemented:
 
 == Requirements
 
-* http://eclipse.org[Eclipse 3.4] or never
+* http://eclipse.org[Eclipse 3.4] or newer
 * SBuild 0.4.0 or newer
 
 == Installation via Update-Site
@@ -39,7 +39,7 @@ Installation via Update-Site is the preferred installation routine.
 
 image::InstallNewSoftware.png[Install new Software,400]
 
-Alternativelly, you can http://sbuild.tototec.de/sbuild/projects/sbuild/files[download] the SBuild Eclipse Plugin and place it into the "dropins" folder of your Eclipse Installation.
+Alternatively, you can http://sbuild.tototec.de/sbuild/projects/sbuild/files[download] the SBuild Eclipse Plugin and place it into the "dropins" folder of your Eclipse Installation.
 
 == Eclipse Setup
 
