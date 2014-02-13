@@ -21,4 +21,10 @@ class SBuild(implicit _project: Project) {
     Path("src/heavy-assets") copyTo Path("target")
   }
 
+  Plugin[JBake]("test") configure (_.copy(
+    sourceDir = Path("target/test-src"),
+    targetDir = Path("target/test-dest"),
+    jbakeVersion = JBakeVersion.Packaged("2.3.0-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.3.0-SNAPSHOT-bin.zip")
+  ))
+
 }
