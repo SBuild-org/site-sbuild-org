@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title><#if (content.title)??><#escape x as x?xml>${content.title} - </#escape></#if>SBuild</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
+    <#if content.summary??><meta name="description" content="${content.summary}">
+    <#else><meta name="description" content="">
+    </#if>
     <meta name="author" content="">
     <meta name="keywords" content="">
 
