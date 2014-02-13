@@ -1,8 +1,7 @@
 import de.tototec.sbuild._
 
-@version("0.7.0.9000")
+@version("0.7.1.9000")
 @classpath("mvn:org.sbuild:org.sbuild.plugins.jbake:0.1.2")
-// @classpath("../jbake/org.sbuild.plugins.jbake/target/org.sbuild.plugins.jbake-0.1.2.jar")
 class SBuild(implicit _project: Project) {
 
   Target("phony:clean").evictCache exec {
