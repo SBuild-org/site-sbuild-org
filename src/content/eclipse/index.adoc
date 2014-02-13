@@ -5,10 +5,9 @@ Tobias Roeser
 :jbake-status: published
 :eclipsepluginversion: 0.4.2
 :toc:
+:toc-placement: preamble
 
 The SBuild Eclipse Plugin extends your Eclipse IDE with SBuild support.
-
-toc::[]
 
 Current version is link:SBuildEclipsePlugin_0_4_2[0.4.2].
 

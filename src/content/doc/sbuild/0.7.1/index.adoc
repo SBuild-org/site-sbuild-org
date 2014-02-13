@@ -7,12 +7,12 @@
 :sbuildversion: 0.7.1
 :numbered:
 :idprefix:
+:toc:
+:toc-placement: preamble
 :toclevels: 2
 
 This is the Documentation for SBuild {SBuildVersion}. 
 link:{path_doc_sbuild}[_Not the version you are looking for?_]
-
-toc::[right]
 
 :leveloffset: 1
 

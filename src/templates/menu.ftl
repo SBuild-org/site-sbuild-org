@@ -14,10 +14,12 @@
             </form>
             <div class="nav-collapse collapse">
               <ul class="nav pull-right">
+                <li><a href="/news">News</a></li>
                 <li class="dropdown"><a href="${config.path_doc_sbuild}">Documentation</a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="/doc/sbuild/${config.cursbuildversion}">SBuild ${config.cursbuildversion} Reference Manual</a></li>
                     <li><a href="http://sbuild.tototec.de/static/doc/sbuild/${config.cursbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package">SBuild ${config.cursbuildversion} Public API Reference (ScalaDoc)</a></li>
+                    <li><a href="/faq">FAQ</a></li>
                   </ul>
                 </li>
                 <li><a href="${config.path_download}">Download</a></li>

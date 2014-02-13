@@ -129,7 +129,7 @@ SBuild failed with an unexpected exception (SBuildException).
 Details: File SBuild.scala already exists.
 ----
 
-=== A Stub Buildfile
+=== The Stub Buildfile
 
 Here is the content of a Buildfile created with `sbuild --create-stub`.
 
@@ -152,36 +152,51 @@ class SBuild(implicit _project: Project) {
 ----
 
 This Buildfile contains the following information:
+
 * It requires SBuild 0.7.1 or newer
 * It contains two targets `clean` and `hello`
-* Both targets are `phony`, which means, they do not produce a single file but constitute some tasks, and both contain some custom actions  
+* Both targets are `phony`, which means, they do not produce a single file but constitute some tasks, and both contain some custom actions.
+
+[NOTE]
+--
+You can customize the result of `sbuild --create-stub` by providing your own stub buildfile. 
+To do this, you have to create a directory `stub` in the installation directory of SBuild (`${SBUILD_HOME}`) and place the template buildfile in that directory. 
+If SBuild is run with the `--create-stub`, it will first search in that stub directory if it will find a file with the same name as the expected buildfile, namely `SBuild.scala`.
+
+You can also provide more that one stub files with different names.
+To select a specific stub file, e.g. `Setup.scala`, run SBuild with `sbuild --create-stub -f Setup.scala`.
+Now SBuild will first search for a file named `Setup.scala` in the `${SBUILD_HOME}/sub` directory.
+If one is found, this will be used as stub file, else the built-in default will be used.
+Finally, you will find the newly created stub file in the current directory.
+--
 
 == Running SBuild
 
 To execute one or more targets of a project, simple give the desired targets as parameters.
 
-E.g. to execute the +clean+ and the +hello+ targets of the just created buildfile above, you will see the following output.
+E.g. to execute the +clean+ and the +hello+ targets of the just created buildfile above, you will run `sbuild clean hello`. Following is the output of that command:
 
 ----
 bash$ sbuild clean hello
 Initializing project...
-Compiling build script: /tmp/test/SBuild.scala...
+Compiling build script: /tmp/test/SBuild.scala...   <1>
 [0%] Executing...
-[0%] Executing target: clean
+[0%] Executing target: clean   <2>
 [50%] Finished target: clean after 4 msec
 [50%] Executing target: hello
 [50%] Greet me
 Hello you
 [100%] Finished target: hello after 0 msec
-[100%] Execution finished. SBuild init time: 3,904 msec, Execution time: 57 msec
+[100%] Execution finished. SBuild init time: 3,904 msec, Execution time: 57 msec   <3>
 ----
 
-If SBuild never run before or if it detects, that the buildfile has changed, it will compile the buildfile, thus the output line "Compiling build script: /tmp/test/SBuild.scala".
+<1> If SBuild never run before or if it detects, that the buildfile has changed, it will compile the buildfile, thus the output `Compiling build script: ...`.
 
-After compilation of the buildfile, it will execute the required targets and print what it is actual doing paired with a handy progress report.
-At the end, you will see the "Execution finished" message and some little statistics.
+<2> After compilation of the buildfile, it will execute the required targets and print what it is actual doing paired with a handy progress report.
 
-In any subsequent run, compilation of the buildscript is not needed and it will run much faster.
+<3> At the end, you will see the `Execution finished` message and some little statistics.
+
+In any subsequent run, compilation of the buildscript is not needed again and SBuild the execution of the requested targets start almost instantly.
 
 ----
 bash$ sbuild clean hello
@@ -195,11 +210,6 @@ Hello you
 [100%] Finished target: hello after 0 msec
 [100%] Execution finished. SBuild init time: 164 msec, Execution time: 55 msec
 ----
-
-In SBuild, targets can depend on each other. 
-For each run, SBuild calculates which targets need to run. 
-For non-trivial projects like this one seen here, SBuild will run much more targets then the ones you have requested.
-Of course, SBuild has powerful mechanism to detect up-to-date targets and will skip these targets, typically resulting in much faster subsequential builds. 
 
 
 == Built-in project exploration
