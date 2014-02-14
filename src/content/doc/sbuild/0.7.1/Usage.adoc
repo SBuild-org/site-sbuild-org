@@ -1,6 +1,6 @@
 = First steps on the Commandline
 :author: Tobias Roeser
-:revdate: 2013-12-13
+:revdate: 2014-02-14
 :SBuildVersion: 0.7.1
 
 SBuild's main interface is a command line tool called `sbuild`. 
@@ -238,7 +238,7 @@ The most frequently used options are:
 
 == Project validation
 
-// TODO
+TBD
 
 == Parallel execution
 
@@ -267,10 +267,10 @@ When SBuild detects an execution failure in a target, it will interrupt all othe
 // TODO: example
 
 Sometimes, it is desirable to fail the build as late as possible and not stop at the moment the first target fails. 
-Of course, the build can not be completed successfully, but some targets may complete.
+Of course, the build can not be completed successfully, but some other targets may complete.
 In such scenarios, you can use the `--keep-going` or `-k` commandline option. 
 When specified, SBuild tries to complete as much targets as possible before failing with a descriptive error message indicating which targets failed and which could not be completed because of unsatisfied dependencies.
 
 == Repetitive tasks
 
-// TODO  
+TBD
