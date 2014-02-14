@@ -88,19 +88,88 @@ With a knowledge of the Core API, you have everything you need to write simple t
 
 ==== Targets
 
-Targets are the most 
+Targets are the central unit of work in SBuild. Each target has at least a *name*. This name is what you use on the SBuild commandline.
 
-TBD
+Targets can be of two kinds: 
 
-==== Actions
+* *file* targets - Targets, that are associated with a local file.
+* *phony* targets - Targets, not associated to any file representing some kind of action.
 
-TBD
+
+.A buildfile with two targets, `file.txt` and `action`
+[source,scala,subs="attributes,verbatim"]
+----
+import de.tototec.sbuild._
+
+@version("{sbuildversion}")
+class SBuild(implicit _project: Project) {
+
+  Target("file.txt") //<1>
+
+  Target("phony:action") //<2>
+
+}
+---- 
+
+<1> A *file* target associated with the file `file.txt` in the project directory. The prefix `file:` is optional and was omitted.
+<2> A *phony* target with the name `action`. As it is *not* associated with any file it must be prefixed with `phony:`. 
+
+File-Targets represent a file in the local file system.
+If SBuild is requested to execute a file target (without dependencies),
+it will first check if that file already exists, and only if not, the target is run. 
+
+Phony-Targets represents some kind of action not resulting in a single local file.
+If SBuild is requested to execute a phony target, the target will always run.
+Of course, there are various mechanism to make that logic more clever, e.g. by making targets `cacheable`.
+
+==== Executions
+
+A plain target as seen above does not do anything when executed. That can be changed by assigning an execution block to a target.
+
+.A buildfile with two targets, `file` and `action`, both having an execution block
+[source,scala,subs="attributes,verbatim"]
+----
+import de.tototec.sbuild._
+
+@version("{sbuildversion}")
+class SBuild(implicit _project: Project) {
+
+  Target("file.txt") exec { //<1>
+    import java.io._
+    val target = Path("file.txt") //<2>
+    println(s"Created file: ${target}") //<3>
+    val ps = new PrintStream(target)
+    ps.println("file content") //<4>
+    ps.close()
+  }
+
+  Target("phony:action") exec { //<5>
+    println("Action executed") //<6>
+  }
+
+}
+---- 
+
+<1> A definition of a file target `file.txt` with an execution block.
+<2> Here you see a way to use `Path` to construct a `java.io.File` relative to the project directory. This is not the most appropriate way in this situation, as you will see soon in the "Target Context" section. 
+<3> The string `"Created file: file.txt"` will be printed to standard output stream.
+<4> The string `file content` is written into the file `file.txt`.
+<5> A definition of a phony target with an execution block.
+<6> The string `"Action executed"` will be printed to standard output stream. 
+
+The example above shows, how targets with execution blocks can be created.  
 
 ==== Dependencies
+
+Targets can also have dependencies. 
 
 TBD
 
 // access to dependencies from an action
+
+==== Target Context
+
+TBD
 
 ==== File operations
 
