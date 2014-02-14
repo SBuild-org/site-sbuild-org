@@ -54,12 +54,8 @@
 /* Drop-Down Menus on hover
 ------------------------------*/
 
-
-.dropdown-menu li:hover .sub-menu {
-    visibility: visible;
-}
-
-.dropdown:hover .dropdown-menu {
+ul.nav li.dropdown:hover ul.dropdown-menu{
     display: block;
+    margin-top:0px
 }
 
