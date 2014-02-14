@@ -73,7 +73,46 @@ These are the special annotation, which are typically placed just before the bui
 
 === SBuild Core API
 
+The Core API of SBuild allows you to
+
+* create targets,
+* declare actions that should take place when a target gets executed, 
+* define dependencies between targets,
+* interact with the environment,
+* run file operations
+
+With a knowledge of the Core API, you have everything you need to write simple to complex buildfiles in an imperative style. 
+
+*Please don't stop here.* With the use of Plugins you will be able to write much more concise and readable build script in a declarative fashion. 
+// TODO link to plugins
+
+==== Targets
+
+Targets are the most 
+
+TBD
+
+==== Actions
+
+TBD
+
+==== Dependencies
+
+TBD
+
+// access to dependencies from an action
+
+==== File operations
+
+TBD
+
+
 TDB
+
+// Targets
+// Dependencies
+// Working with files
+
 
 === Using Plugins
 
