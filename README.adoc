@@ -1,0 +1,24 @@
+= The sbuild.org website project
+
+== How to build the website
+
+Actually, we need some unreleased features of JBake, to build the site. Therefore, you need the latest master version of it.
+
+TODO: Script the build of JBake master in SBuild
+
+[source,scala]
+----
+sbuild clean jbake
+----
+
+To test the site locally, run:
+
+[source,scala]
+----
+sbuild clean serve-jbake
+----
+
+== Updating the site after a new SBuild release
+
+TODO
+
