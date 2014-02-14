@@ -16,19 +16,23 @@ Project scripts will be automatically compiled on the first run. Subsequent SBui
 
 === Standardized Projects plus Flexibility  
 
-With a growing number of available plugins SBuild encourages standardized project setups, but without compromising flexibility. 
+With a growing number of available plugins SBuild encourages standardized project setups, but without compromising flexibility.
+An any time, you can customize your build when needed.
 
 === Magic free
 
 SBuild does not make any assumptions about your build environment. It does not guess settings or additional buildfiles. 
 You can always know what it will do based on one single entry point: the buildfile.
-So does your co-worker or your CI Server. 
+Your co-workers and your CI team with thank you, afterwards.
 
 We believe, this is a requirement to achieve reproducible builds over time. 
 
 === Easy integration of existing tools
 
 SBuild integration capabilities allow tools like Ant tasks, Eclipse Aether (Maven) or Adept to integrate seamlessly. 
+
+SBuild's plugin container is capable to isolate plugin implementations, so that plugins will not inferfere others.
+Each plugin has fine control which API's it will export to it's consumer.
 
 === Open
 
