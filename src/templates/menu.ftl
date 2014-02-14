@@ -14,7 +14,19 @@
             </form>
             <div class="nav-collapse collapse">
               <ul class="nav pull-right">
-                <li><a href="/news">News</a></li>
+                <li class="dropdown"><a href="/news">News</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <#assign postcount = 0>
+                    <#assign maxpostcount = 5>
+                    <#list posts as post>
+                      <#if post.status == "published" && postcount < maxpostcount>
+                        <#assign postcount = postcount + 1>
+                        <li><a href="${post.uri}"><#escape x as x?xml>${post.title}</#escape></a></li>
+                      </#if>
+                    </#list>
+                    <li><a href="/news">more...</a><li>
+                  </ul>
+                </li>
                 <li class="dropdown"><a href="${config.path_doc_sbuild}">Documentation</a>
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="/doc/sbuild/${config.cursbuildversion}">SBuild ${config.cursbuildversion} Reference Manual</a></li>
@@ -25,8 +37,14 @@
                 <li><a href="${config.path_download}">Download</a></li>
                 <li><a href="/plugins.html">Plugins</a></li>
                 <li><a href="/eclipse">Eclipse</a></li>
-                <li><a href="/community.html">Community</a></li>
-                <li><a href="/contact.html" title="Contact / Impressum">Contact</a></li>
+                <li class="dropdown">
+                    <a href="/community.html">Get Involved / Contact</a>
+                   <ul class="dropdown-menu" role="menu">
+                    <li><a href="https://github.com/SBuild-org/sbuild"><i class="icon-github"></i> @SBuild-org on GitHub</a></li>
+                    <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> @SBuildOrg on Twitter</a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild"><i class="icon-twitter"></i> #sbuild on IRC</a></li>
+                  </ul>
+                </li>
               </ul>
             </div>
           </div>
