@@ -20,7 +20,9 @@
 	<#else><meta name="twitter:title" content="${content.title}"></#if>
 	<#if content.twitter_description??><meta name="twitter:description" content="${content.twitter_description}">
 	<#else>
-	  <#if content.summary??><meta name="twitter:description" content="${content.summary}"></#if>
+	  <#if content.summary??><meta name="twitter:description" content="${content.summary}">
+	  <#else><meta name="twitter:description" content="SBuild - the magic-free yet powerful build tool.">
+	  </#if>
 	</#if>
 	<#if content.twitter_image??><meta name="twitter:image" content="${content.twitter_image}"></#if>
 	</#if>        

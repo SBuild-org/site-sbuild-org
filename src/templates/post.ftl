@@ -1,7 +1,6 @@
 <#-- Define sime twitter card tags here -->
-<#if content.twitter_card??><#else>
-  <#assign twitter_card="summary">
-</#if>
+
+<#assign twitter_card="summary">
 
 <#include "header.ftl">
 	

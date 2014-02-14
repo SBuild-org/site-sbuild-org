@@ -1,3 +1,5 @@
+<#assign twitter_card="summary">
+
 <#include "header.ftl">
 
 	<#include "menu.ftl">

@@ -1,3 +1,5 @@
+<#assign twitter_card="summary">
+
 <#include "header.ftl">
 	
 	<#include "menu.ftl">
@@ -39,7 +41,7 @@
       ${content.body}
     </div>
     <div class="span4">
-    <h2><small>Recent News</small></h2>
+    <h1><small>Recent News</small></h1>
     <#assign maxpostcount=5>
     <#assign postcount=0>
 	<#list posts as post>
