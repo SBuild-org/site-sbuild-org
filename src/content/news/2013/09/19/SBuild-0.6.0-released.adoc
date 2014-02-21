@@ -19,7 +19,7 @@ It also shows a meaningful progress for longer downloads.
 In some other build setups you might welcome the new `--repeat` option, which will re-run the specified targets after a given time interval.
 This version will also properly report build script and compile problems to the SBuild Embedder, which in turn will contribute to a better user experience of the  SBuild Eclipse Plugin.
 
-Download the http:sbuild.tototec.de/sbuild/attachments/download/75/sbuild-0.6.0-dist.zip[SBuild 0.6.0 distribution] now.
+Download the http://sbuild.tototec.de/sbuild/attachments/download/75/sbuild-0.6.0-dist.zip[SBuild 0.6.0 distribution] now.
 
 Read the full link:SBuild_0_6_0#Changelog[Changelog].
 
