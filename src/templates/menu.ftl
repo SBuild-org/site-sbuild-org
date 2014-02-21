@@ -21,10 +21,10 @@
                     <#list posts as post>
                       <#if post.status == "published" && postcount < maxpostcount>
                         <#assign postcount = postcount + 1>
-                        <li><a href="${post.uri}"><#escape x as x?xml>${post.title}</#escape></a></li>
+                        <li><a href="${post.uri}"><#escape x as x?xml>${post.title}</#escape> <small class="muted">- ${post.date?string("dd MMMM yyyy")}</small></a></li>
                       </#if>
                     </#list>
-                    <li><a href="/news">more...</a><li>
+                    <li><a href="/news">older News...</a><li>
                   </ul>
                 </li>
                 <li class="dropdown"><a href="${config.path_doc_sbuild}">Documentation</a>
@@ -41,8 +41,8 @@
                     <a href="/community.html">Get Involved / Contact</a>
                    <ul class="dropdown-menu" role="menu">
                     <li><a href="https://github.com/SBuild-org/sbuild"><i class="icon-github"></i> GitHub</a></li>
-                    <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> Twitter</a></li>
-                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild" ><i class="icon-comment"></i> IRC</a></li>
+                    <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> Twitter <small class="muted">@SBuildOrg</small></a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild" ><i class="icon-comment"></i> IRC <small class="muted">#sbuild</small></a></li>
                   </ul>
                 </li>
               </ul>
