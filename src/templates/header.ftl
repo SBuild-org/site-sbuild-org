@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title><#if (content.title)??><#escape x as x?xml>${content.title} - </#escape></#if>SBuild</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <#if content.summary??><meta name="description" content="${content.summary}">
+    <#if content?? && content.summary??><meta name="description" content="${content.summary}">
     <#else><meta name="description" content="">
     </#if>
     <meta name="author" content="">
     <meta name="keywords" content="">
 
-    <#if (content.twitter_card)?? || twitter_card??>
+    <#if content?? && (content.twitter_card?? || twitter_card??)>
 	<!-- TWitter card -->
 	<#if (content.twitter_card)??><meta name="twitter:card" content="${content.twitter_card}">
 	<#else><meta name="twitter:card" content="${twitter_card}"></#if>
