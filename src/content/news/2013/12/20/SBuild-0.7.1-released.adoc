@@ -3,6 +3,7 @@
 :revdate: 2013-12-20
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Release 
 :summary: Just before Christmas, we released SBuild 0.7.1 which brings minor Plugin API changes.
 
 Just before Christmas, we announce the release of link:{path_doc_sbuild}/0.7.1/SBuild-0.7.1.html[SBuild 0.7.1].

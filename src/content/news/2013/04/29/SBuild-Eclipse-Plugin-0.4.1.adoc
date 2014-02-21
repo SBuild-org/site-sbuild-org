@@ -4,6 +4,7 @@ Tobias Roeser
 :summary: SBuild Eclipse Plugin 0.4.1 released, fixes classpath container update issues and improved speed.
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Eclipse, Release
 
 The next release is out the door. 
 

@@ -4,6 +4,7 @@ Tobias Roeser
 :summary: SBuild 0.4.0 Release was release on 2013-03-09 and brought a lot of new features and speed improvements.
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Release
 
 I'm happy to announce the release of *SBuild 0.4.0*. 
 

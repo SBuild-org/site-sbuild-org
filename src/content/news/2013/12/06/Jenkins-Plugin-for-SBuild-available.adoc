@@ -3,6 +3,7 @@
 :revdate: 2013-12-06
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Release, Jenkins, 
 :summary: The new Jenkins SBuild Plugin allows you to easily and automatically install any SBuild version into your Jenkins. A dedicated SBuild builder lets you select the desired SBuild version and the buildfiles, targets and options you want to use.
 
 

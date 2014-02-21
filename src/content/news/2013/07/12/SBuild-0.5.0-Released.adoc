@@ -3,6 +3,7 @@ Tobias Roeser
 2013-07-12
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Release, Performance
 :summary: SBuild 0.5.0 is released and contains a few bug fixes and nice new features, including speed improvements, parallel target execution, commandline shortcut and build file relative paths.
 
 

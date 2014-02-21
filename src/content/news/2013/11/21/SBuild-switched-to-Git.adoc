@@ -4,6 +4,7 @@
 :summary: SBuild switched it's source code management from Subersion to Git.
 :jbake-status: published
 :jbake-type: post
+:jbake-tags: Migration, Git, Subverion, GitHub
 
 SBuild main source code repository switched from Subversion (svn) to Git. 
 With this switch, we also splitted the existing repository. 

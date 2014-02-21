@@ -3,6 +3,7 @@
 :revdate: 2013-12-03
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Git, Subversion, GitHub
 :summary: After the switch of SBuild's main source code repository to Git, we now moved all projects to Git. All repositories are hosted at Github, which, so we think, makes it easier for the community to participate.
 
 After the switch of SBuild's main source code repository to Git, we now moved all projects to Git. All repositories are hosted at Github, which, so we think, makes it easier for the community to participate.

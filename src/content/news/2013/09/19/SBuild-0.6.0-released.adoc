@@ -4,6 +4,7 @@
 :summary: SBuild 0.6.0 was released with improvements in parallelization, downloading, error handling, scheme handler support and embedding.
 :jbake-type: post
 :jbake-status: published
+:jbake-tags: Release
 
 Another release which brings a lot of improvements and some minor API changes. 
 
