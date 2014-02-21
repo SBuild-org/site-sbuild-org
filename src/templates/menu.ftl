@@ -40,9 +40,9 @@
                 <li class="dropdown">
                     <a href="/community.html">Get Involved / Contact</a>
                    <ul class="dropdown-menu" role="menu">
-                    <li><a href="https://github.com/SBuild-org/sbuild"><i class="icon-github"></i> @SBuild-org on GitHub</a></li>
-                    <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> @SBuildOrg on Twitter</a></li>
-                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild"><i class="icon-comment"></i> #sbuild on IRC</a></li>
+                    <li><a href="https://github.com/SBuild-org/sbuild"><i class="icon-github"></i> GitHub</a></li>
+                    <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> Twitter</a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild" ><i class="icon-comment"></i> IRC</a></li>
                   </ul>
                 </li>
               </ul>
