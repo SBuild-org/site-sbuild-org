@@ -1,0 +1,42 @@
+= SBuild 0.7.1
+Tobias Roeser
+2013-12-20
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2013-12-20
+
+== Download
+
+* SBuild Distribution: http://sbuild.tototec.de/sbuild/attachments/download/87/sbuild-0.7.1-dist.zip[sbuild-0.7.1-dist.zip]
+* http://sbuild.tototec.de/sbuild/projects/sbuild/files[Other downloads...]
+
+
+== Online Documentation
+
+* Documentation process is currently in progress... 
+* link:/news/The-new-Plugin-Systm-of-SBuild-0.7.1.html[The new Plugin System of SBuild 0.7.0]
+* link:/doc/sbuild/0.7.1[Build Documentation]
+* "SBuild Public API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package
+* "SBuild Addons API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package
+* "SBuild Ant Support and Wrapper Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package
+
+[#Changelog]
+== Changelog
+
+.SBuild core
+* Plugin API: Renamed Plugin.PluginConfigurer to Plugin.PluginHandle and
+  changed the configure method to support and encourage immutable plugin
+  configuration instances.
+* Extended Plugin.PluginHandle by get and isModified methods.
+* Check minimal required SBuild versions of plugins.
+
+.SBuild Addons
+* ForkSupport: Changed default of parameter 'failOnError' to true in methods
+  runAndWait and runJavaAndWait.
+* ForkSupport: Added directory parameter to runJavaAndWait.
+
+Previous Release: link:SBuild-0.7.0.html[SBuild 0.7.0]
+
+All Releases: link:index.html[Release History]
+

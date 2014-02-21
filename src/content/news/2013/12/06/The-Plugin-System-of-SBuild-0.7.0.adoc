@@ -1,0 +1,136 @@
+= The Plugin System of SBuild 0.7.0
+Tobias Roeser
+2013-12-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Plugin, Release
+:summary: With the 0.7.0 release, SBuild received a plugin system. We will show you, how it looks like.
+
+With the link:/releases/SBuild-0.7.0.html[0.7.0] release, SBuild received a plugin system. 
+Although, it is not necessary to implement a plugin to provide features to SBuild,
+writing a plugin might provide some useful characteristic not available otherwise.
+
+== Exported and private packages
+
+Each SBuild plugin is loaded by a separate classloader and has the capability to keep its implementation (and dependencies) private.
+On the other hand, a plugin can export some or all of its internals on a package level (just like in OSGi).
+Thus, with plugins, you have fine control over what a plugin will contribute to a SBuild project.
+It is intended, that plugins with lots of dependencies keep those in their private classes space to avoid conflicts with other plugins and the project itself.
+At a minimum the plugin class must be exported.
+All other classes, even the plugin factory (the class implementing the `Plugin` trait) can be private.
+
+To make an plugin available to your project, all you need to do is to add it to the classpath of the project, e.g. with the `@classpath` annotation.
+
+== No magic, just what you call for
+
+Another focus was it, to keep SBuild magic free (tm) and the user in full control.
+Thus, no plugin will automatically extend or modify your project (besides the classpath).
+To use some plugins functionality, you have to explicitly activate it. 
+
+At any point in your SBuild buildfile you can activate and configure a plugin.
+Based on that configuration, the plugin will contribute additional functionality to your project, which contains most likely a new Target or a SchemeHandler.
+E.g. a Java compiler plugin might provide a target that compiles your Java source files
+whereas a Aether plugin would add a SchemeHandler that is able to resolve transitive dependencies through the Eclipse Aether (aka Maven) library.
+
+For more flexibility each plugin can have multiple instances which are named.
+In most cases you will not need this feature and you simple can leave the name out (the plugin instance will become the name `""`).
+This feature should support scenarios like using the same compile plugin to compile main and test classes,
+or use the same test runner plugin to run unit tests and integration tests.
+As the plugin instances are aware of their given name, some good defaults could be derived from that name.
+E.g. a compiler plugin instance with the name "test" could automatically adjust the target name and input and output directories.
+
+== Example Hello World Plugin
+
+Imagine a simple `Hello` plugin, which will add a `"hello"` target to our project.
+If the plugin instance is named, the target name will be `"hello-${name}"`.
+
+[source,scala,subs="verbatim"]
+----
+import de.tototec.sbuild._
+import org.example.hello
+
+@version("0.7.0")
+@classpath("mvn:org.example:helloworld:1.0.0") //<1>
+class SBuild(implicit _project: Project) {
+
+  Plugin[Hello] //<2>
+
+  Plugin[Hello]("world") <3>
+
+  Plugin[Hello]("city") configure { c => //<4>
+    c.targetName = "hello-town"
+  }
+
+}
+----
+<1> With the `@classpath` annotation, we make the plugin available in our buildfile.
+<2> With the `Plugin.apply[T]` method, we activate the plugin with it's default configuration.
+<3> We activate another plugin instance, but this time a named instance with the name `"world"`.
+<4> Here, we activate another `"city"` instance an configure it.
+
+
+The such configured project will have three targets:
+
+----
+bash $ sbuild -l
+hello
+hello-world
+hello-town
+----
+
+The implementation of that plugin could look like this:
+
+[source,scala]
+----
+package org.example.hello
+
+import de.tototec.sbuild._
+
+// This is the class that is seen in the project buildfile and is used for configuration
+class Hello(val name: String) {
+  var targetName: String = if(name == "") "hello" else s"hello-$name"
+}
+
+// This is the factory
+class HelloPlugin(implicit project: Project) extends Plugin[Hello] {
+  override def create(name: String): Hello = new Hello(name)
+  override def applyToProject(instances: Seq[(String, Hello)]): Unit = instances foreach {
+    case (name, hello) =>
+      Target(hello.targetName) exec {
+        println("hello " + hello.name)
+      }
+  }
+}
+----
+
+The Jar, that contains the hello plugin must at least have the following Manifest entry:
+
+----
+SBuild-Plugin: org.example.hello.Hello=org.example.hello.HelloPlugin;version="1.0.0"
+----
+
+The supported Manifest entries are:
+
+* `SBuild-Plugin` - Used to declare one or more plugins.
+* `SBuild-Classpath` - Used to add additional dependencies (as part of the private class space). All default SBuild schemes (file, http, mvn) are supported.
+* `SBuild-ExportPackage` - Used to export some of the plugins private packages. If this is not present, all packages of that plugin will be exported. 
+
+== ...and the not so shiny parts
+
+Unfortunately the resources to develop SBuild are limited and the main focus for this release was to get a minimal working plugin system right,
+so that you and me can start to write plugins.
+Currently, there are almost no ready to use plugins available.
+Another drawback is the spare documentation for the plugin system and SBuild in general.
+I will try hard to improve that part, too.
+
+== Outlook
+
+Of course, there will be more plugins over time.
+We will provide some, other will hopefully too.
+Also, there is some ongoing thinking, that we should organize a plugin hackathon in January 2014 in Leipzig. 
+
+Our aim is to build an open community and we look forward to your plugins and your feedback.
+Let us know if you use SBuild, too.
+Please use the channel most appropriate for you, email, twitter, forum, ticket system, mailing list, its your choice. 
+
+The plugin system is just one new part of SBuild 0.7.0. I hope, you enjoy all the other improvements too.

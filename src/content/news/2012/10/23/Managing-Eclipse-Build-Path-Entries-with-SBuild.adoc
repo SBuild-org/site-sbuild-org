@@ -38,7 +38,8 @@ SBuild is a very flexible build tool which lets you do with it, whatever you wan
 In the rest of this article, I will show you, how you can manage your Eclipse project build path with SBuild and the SBuild Eclipse Plugin.
 This article is not about building your project with SBuild.
 
-To install SBuild, download the SBuild Distribution, e.g. the http://sbuild.tototec.de/sbuild/attachments/download/19/sbuild-0.1.4-dist.zip[sbuild-0.1.4-dist.zip] from the link:{path_download_sbuild}[SBuild download page] and unpack it into a local directory.
+To install SBuild, download the SBuild Distribution, e.g. the http://sbuild.tototec.de/sbuild/attachments/download/19/sbuild-0.1.4-dist.zip[sbuild-0.1.4-dist.zip] from
+the http://sbuild.tototec.de/sbuild/projects/sbuild/files[SBuild download homepage] and unpack it into a local directory.
 If you are under Windows, you need to add an environment variable `SBUILD_HOME` pointing to that local directory (containing the content of the ZIP file).
 For further instructions, how to install SBuild, read page link:{path_doc_sbuild_current}#Installation[Installation].
 
@@ -108,7 +109,8 @@ You can even register the same SchemeHandler under different scheme names, e.g. 
 In this case, you can ignore the next parapraph._
 
 If you do not have done it before, now is the time to install the http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/SBuildEclipsePlugin[SBuild Eclipse Plugin].
-Download the plugin JAR http://sbuild.tototec.de/sbuild/attachments/download/23/de.tototec.sbuild.eclipse.plugin-0.1.4.jar[de.tototec.sbuild.eclipse.plugin-0.1.4.jar] from the http://sbuild.tototec.de/sbuild/projects/sbuild/files[SBuild download homepage] and place it into the "dropins" folder of your Eclipse installation.
+Download the plugin JAR http://sbuild.tototec.de/sbuild/attachments/download/23/de.tototec.sbuild.eclipse.plugin-0.1.4.jar[de.tototec.sbuild.eclipse.plugin-0.1.4.jar] from
+the http://sbuild.tototec.de/sbuild/projects/sbuild/files[SBuild download homepage] and place it into the "dropins" folder of your Eclipse installation.
 After that you need to (re)start your Eclipse.
 To function properly, you need to tell your Eclipse the location of the SBuild installation.
 Open the Eclipse Preferences -> Java -> Build Path -> Classpath Variables and add the variable `SBUILD_HOME`, pointing to the installation directory of SBuild.

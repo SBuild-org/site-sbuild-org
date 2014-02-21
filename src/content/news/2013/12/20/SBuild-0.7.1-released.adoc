@@ -6,11 +6,12 @@
 :jbake-tags: Release 
 :summary: Just before Christmas, we released SBuild 0.7.1 which brings minor Plugin API changes.
 
-Just before Christmas, we announce the release of link:{path_doc_sbuild}/0.7.1/SBuild-0.7.1.html[SBuild 0.7.1].
+Just before Christmas, we announce the release of link:/releases/SBuild-0.7.1.html[SBuild 0.7.1].
 
-Based on the feedback and our own experiences with the link:{path_doc_sbuild}/0.7.0/SBuild-0.7.0-PluginSystem.html[Plugin API] introduced in link:{path_doc_sbuild}/0.7.0/SBuild-0.7.0.html[SBuild 0.7.0] we made some small changes to the Plugin API. 
+Based on the feedback and our own experiences with the link:/news/2013/12/06/The-Plugin-System-of-SBuild-0.7.0.html[Plugin API] introduced
+in link:/releases/SBuild-0.7.0.html[SBuild 0.7.0] we made some small changes to the Plugin API. 
 This is, to allow and encourage immutable plugin configurations over mutable ones. 
-For a complete list of changes read the link:{path_doc_sbuild}/0.7.1/SBuild-0.7.1.html#Changelog[Changelog].
+For a complete list of changes read the link:/releases//SBuild-0.7.1.html#Changelog[Changelog].
 
 Merry Christmas and a Happy New Year, +
 Tobias Roeser
