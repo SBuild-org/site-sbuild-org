@@ -1,0 +1,29 @@
+= SBuild Eclipse Plugin 0.4.0
+Tobias Roeser
+2013-04-20
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2013-04-20
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.4.0 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/64/de.tototec.sbuild.eclipse.plugin_0.4.0.jar[de.tototec.sbuild.eclipse.plugin_0.4.0.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-0.3.0.html[SBuild Eclipse Plugin 0.3.0]
+
+* Minimal requires SBuild version is now SBuild 0.4.0.
+* Fixed API incompatibilities.
+* Workspace resolution configuration with regular expressions now supports substution based on matched groups.
+
+
+All Releases: link:index.html[Release History]

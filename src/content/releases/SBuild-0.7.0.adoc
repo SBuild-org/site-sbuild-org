@@ -16,13 +16,15 @@ Release date: 2013-12-06
 
 * Documentation process is currently in progress...
 * link:/news/2013/12/06/The-Plugin-System-of-SBuild-0.7.0.html[The new Plugin System of SBuild 0.7.0]
-* http://sbuild.tototec.de/sbuild/wiki[SBuild Documentation]
+* http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Documentation[SBuild Documentation]
 * "SBuild Public API Reference (Scaladoc) ":/static/doc/sbuild/0.7.0/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package
 * "SBuild Addons API Reference (Scaladoc) ":/static/doc/sbuild/0.7.0/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package
 * "SBuild Ant Support and Wrapper Reference (Scaladoc) ":/static/doc/sbuild/0.7.0/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package
 
 [#Changelog]
 == Changelog
+
+Changes since link:SBuild-0.6.0.html[SBuild 0.6.0]
 
 .SBuild core and SBuild Runner
 * Plugin system with isolated plugin class loading and hierarchical dependency resolving.
@@ -50,8 +52,5 @@ Release date: 2013-12-06
 * ScalaTest: Allow configuration of more than one reporter. Added new parameters: graphicalOutputSettings, standardOutputSettings, standardErrorSettings, outputFile, utputFileSettings, xmlOutputDir, reporterClass, additionalScalaTestArgs. Deprecated parameter: reporter.
 * ForkSupport: Added new parameters "failOnError" and "env" to ForkSupport.runAndWait.
 
-
-
-Previous Release: link:SBuild-0.6.0.html[SBuild 0.6.0]
 
 All Releases: link:index.html[Release History]

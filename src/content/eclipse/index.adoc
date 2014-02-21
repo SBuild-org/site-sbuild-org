@@ -9,7 +9,7 @@ Tobias Roeser
 
 The SBuild Eclipse Plugin extends your Eclipse IDE with SBuild support.
 
-Current version is link:SBuildEclipsePlugin_0_4_2[0.4.2].
+Current version is link:/releases/SBuild-Eclipse-Plugin-0.4.2.html[0.4.2].
 
 == Description
 

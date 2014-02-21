@@ -6,7 +6,7 @@ Tobias Roeser
 :jbake-status: published
 :jbake-tags: Eclipse, Release, Hackathon
 
-I'm happy to announce the release of the link:SBuildEclipsePlugin_0_4_0[SBuild Eclipse Plugin 0.4.0].
+I'm happy to announce the release of the link:/releases/SBuild-Eclipse-Plugin-0.4.0.html[SBuild Eclipse Plugin 0.4.0].
 
 This version is compatible with SBuild 0.4.0 and never versions.
 Although this release does not fix all classpath update issues we know about, it is a workable solution that support the latest and greatest SBuild version.

@@ -1,0 +1,32 @@
+= SBuild Eclipse Plugin 0.4.2
+Tobias Roeser
+2013-06-07
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2013-06-07
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.4.0 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/66/de.tototec.sbuild.eclipse.plugin_0.4.2.jar[de.tototec.sbuild.eclipse.plugin_0.4.2.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-0.4.1.html[SBuild Eclipse Plugin 0.4.1]
+
+* Support for resolving/downloading sources and javadoc. This delegated the to a `"source"` and a `"javadoc"` scheme handler,
+  which will be available since SBuild 0.4.0.9000 (trunk milestone).
+* Show an Error Marker in Eclipse (Package Explorer, Problems View, Editor) for SBuild build file errors.
+* Updates of the build file will now immediately reflected in the classpath container.
+  No more need to close/reopen the project.
+* The SBuild Libraries entry in Package Explorer will be decorated with error messages, if downloading of some dependencies failed.
+
+
+All Releases: link:index.html[Release History]

@@ -8,14 +8,17 @@ Tobias Roeser
 == SBuild {sbuildversion}
 
 * link:{path_doc_sbuild}/{sbuildversion}/index.html[SBuild Reference Manual {sbuildversion}]
+* link:/news/2013/12/20/The-Plugin-System-of-SBuild-0.7.1.html[The Plugin System of SBuild 0.7.1]
 * http://sbuild.tototec.de/sbuild/projects/sbuild/wiki/Documentation[The old Documentation] (more complete)
-
-* link:{path_doc_sbuild}/0.7.0/SBuild-0.7.0-PluginSystem.html[The new Plugin System of SBuild 0.7.0]
 
 * Scaladoc
 ** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference]
 ** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference]
 ** http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference]
+
+== SBuild 0.7.0
+
+* link:/news/2013/12/06/The-Plugin-System-of-SBuild-0.7.0.html[The Plugin System of SBuild 0.7.0]
 
 == Older Versions
 

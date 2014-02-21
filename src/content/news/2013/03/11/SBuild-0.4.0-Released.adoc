@@ -14,9 +14,9 @@ Phony link:/news/2013/02/23/Target-caching-in-SBuild-0.4.html[targets can now be
 Additional link:/news/2013/03/07/Attached-Files-and-Alias-Schemes-in-SBuild-0.4.html[files can be attached] to targets.
 Empty phony targets will automatically attach all files of their dependencies and last but not least, the SBuild comand line got improved.
 Essential information are highlighted with colors and error messages output got some love, too. 
-(Read the full link:SBuild_0_4_0#Changelog[change log here].)
+(Read the full link:/releases/SBuild-0.4.0.html#Changelog[changelog here].)
 
-You can link:SBuild_0_4_0[download SBuild 0.4.0 here]. Your feedback is much appreciated!
+You can link:/releases/SBuild-0.4.0.html[download SBuild 0.4.0 here]. Your feedback is much appreciated!
 
 Kind Regards, +
 Tobias Roeser

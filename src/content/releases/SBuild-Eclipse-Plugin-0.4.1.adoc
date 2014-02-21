@@ -1,0 +1,28 @@
+= SBuild Eclipse Plugin 0.4.1
+Tobias Roeser
+2013-04-29
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2013-04-29
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.4.0 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/65/de.tototec.sbuild.eclipse.plugin_0.4.1.jar[de.tototec.sbuild.eclipse.plugin_0.4.1.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-0.4.0.html[SBuild Eclipse Plugin 0.4.0]
+
+* Fixed issues with classpath container refreshes. Now, classpath changes are properly propagated to the Eclipse workspace.
+* SBuild JARs are only loaded once and the classloader is shared, which will reduce memory consumption and improve speed (class loading and JIT compiler effects).
+
+
+All Releases: link:index.html[Release History]

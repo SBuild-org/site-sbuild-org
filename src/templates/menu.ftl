@@ -29,12 +29,16 @@
                 </li>
                 <li class="dropdown"><a href="${config.path_doc_sbuild}">Documentation</a>
                   <ul class="dropdown-menu" role="menu">
-                    <li><a href="/doc/sbuild/${config.cursbuildversion}">SBuild ${config.cursbuildversion} Reference Manual</a></li>
-                    <li><a href="http://sbuild.tototec.de/static/doc/sbuild/${config.cursbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package">SBuild ${config.cursbuildversion} Public API Reference (ScalaDoc)</a></li>
+                    <li><a href="/doc/sbuild/${config.cursbuildversion}">SBuild Reference Manual <span class="muted">${config.cursbuildversion}</span></a></li>
+                    <li><a href="http://sbuild.tototec.de/static/doc/sbuild/${config.cursbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package">SBuild Core ScalaDoc <span class="muted">${config.cursbuildversion}</span></a></li>
                     <li><a href="/faq">FAQ</a></li>
                   </ul>
                 </li>
-                <li><a href="${config.path_download}">Download</a></li>
+                <li class="dropdown"><a href="${config.path_download}">Download</a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="http://sbuild.tototec.de/sbuild/attachments/download/87/sbuild-0.7.1-dist.zip">SBuild 0.7.1 Distribution <small class="muted">- 2013-12-20</small></a></li>
+                  </ul>
+                </li>
                 <li><a href="/plugins.html">Plugins</a></li>
                 <li><a href="/eclipse">Eclipse</a></li>
                 <li class="dropdown">

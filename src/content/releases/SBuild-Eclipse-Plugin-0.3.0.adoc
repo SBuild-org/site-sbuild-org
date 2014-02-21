@@ -1,0 +1,29 @@
+= SBuild Eclipse Plugin 0.3.0
+Tobias Roeser
+2013-01-06
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2013-01-06
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.3.0 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/48/de.tototec.sbuild.eclipse.plugin_0.3.0.jar[de.tototec.sbuild.eclipse.plugin_0.3.0.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-0.2.1.html[SBuild Eclipse Plugin 0.2.1]
+
+* Switched to Scala 2.10.
+* Supported SBuild version is now 0.3.0 or above because of Scala 2.10 binary incompatibilities.
+* Made execution more robust.
+
+
+All Releases: link:index.html[Release History]

@@ -8,7 +8,7 @@ Tobias Roeser
 
 The next release is out the door. 
 
-link:SBuildEclipsePlugin_0_4_1[SBuild Eclipse Plugin 0.4.1] finally fixed a long standing bug regarding the refresh of the classpath container.
+link:/releases/SBuild-Eclipse-Plugin-0.4.1.html[SBuild Eclipse Plugin 0.4.1] finally fixed a long standing bug regarding the refresh of the classpath container.
 Now, classpath container refreshes should always work, especially, after required projects (via workspace resolution) were closed or opened.
 
 This version also improves the SBuild embedder, which now is only loaded once to reduce cosumed memory and improves speed.

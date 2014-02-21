@@ -2,6 +2,8 @@
 :revdate: 2014-02-14
 :jbake-type: index2
 :jbake-status: published
+:link-sbuild-dev: https://groups.google.com/forum/#!forum/sbuild-dev
+:link-sbuild-user: https://groups.google.com/forum/#!forum/sbuild-user
 
 == SBuild - the magic-free yet powerful build tool
 
@@ -39,8 +41,7 @@ Each plugin has fine control which API's it will export to it's consumer.
 SBuild is developed and published under the http://www.apache.org/licenses/LICENSE-2.0[Apache License, Version 2.0].
 The source code is hosted publicly on https://github.com/SBuild-org/sbuild[GitHub].
 
-You can ask questions on the mailing lists (https://groups.google.com/forum/#!forum/sbuild-user[[1]],
-https://groups.google.com/forum/#!forum/sbuild-dev[[2]]), irc://irc.freenode.org/#sbuild[IRC], or https://twitter.com/SBuildOrg[Twitter].
+You can ask questions on the mailing lists ({link-sbuild-dev}[[1]], {link-sbuild-user}[[2]]), irc://irc.freenode.org/#sbuild[IRC], or https://twitter.com/SBuildOrg[Twitter].
 You can report bugs or new feature ideas on our issue tracker on https://github.com/SBuild-org/sbuild/issues[GitHub].
 And any kind of contribution, be it pull requests, ideas, documentation or any other feedback is much appreciated.
 

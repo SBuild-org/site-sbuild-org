@@ -15,7 +15,7 @@ Release date: 2013-12-20
 == Online Documentation
 
 * Documentation process is currently in progress... 
-* link:/news/The-new-Plugin-Systm-of-SBuild-0.7.1.html[The new Plugin System of SBuild 0.7.0]
+* link:/news/2013/12/20/The-Plugin-System-of-SBuild-0.7.1.html[The Plugin System of SBuild 0.7.1]
 * link:/doc/sbuild/0.7.1[Build Documentation]
 * "SBuild Public API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package
 * "SBuild Addons API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package
@@ -23,6 +23,8 @@ Release date: 2013-12-20
 
 [#Changelog]
 == Changelog
+
+Changes since link:SBuild-0.7.0.html[SBuild 0.7.0]
 
 .SBuild core
 * Plugin API: Renamed Plugin.PluginConfigurer to Plugin.PluginHandle and
@@ -36,7 +38,6 @@ Release date: 2013-12-20
   runAndWait and runJavaAndWait.
 * ForkSupport: Added directory parameter to runJavaAndWait.
 
-Previous Release: link:SBuild-0.7.0.html[SBuild 0.7.0]
 
 All Releases: link:index.html[Release History]
 

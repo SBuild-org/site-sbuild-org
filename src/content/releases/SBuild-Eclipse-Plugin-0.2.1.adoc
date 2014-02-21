@@ -1,0 +1,28 @@
+= SBuild Eclipse Plugin 0.2.1
+Tobias Roeser
+2012-11-07
+:jbake-type: page
+:jbake-status: published
+
+Release date: 2012-11-07
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.1.4 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/38/de.tototec.sbuild.eclipse.plugin_0.2.1.jar[de.tototec.sbuild.eclipse.plugin_0.2.1.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-0.2.0.html[SBuild Eclipse Plugin 0.2.0]
+
+* The SBuild Libraries classpath will be automatically refreshed when workspace projects will be opened or closed, resulting in proper workspace resolution.
+* Added Scala Library to Eclipse Update Site.
+
+
+All Releases: link:index.html[Release History]
