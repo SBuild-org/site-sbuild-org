@@ -3,6 +3,7 @@ Tobias Roeser
 2012-11-27
 :jbake-type: post
 :jbake-status: published
+:summary: Today, I will announce some very exciting development in SBuild land: Natures. For now, I have only a prototype, but looking onto what I have already, I am very excited to release it in a near future.
 
 Today, I will announce some very exciting development in SBuild land...
 
