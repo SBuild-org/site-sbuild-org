@@ -1,0 +1,56 @@
+= New and Noteworthy of SBuild 0.5.0
+Tobias Roeser
+2013-07-12
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release, Performance, Caching, Changelog
+:summary: New and Noteworthy of SBuild 0.5.0. We highlight some features and improvements of the latest SBuild release.
+
+== Speed up
+
+This version again got a huge speed up, especially in the up-to-date check and dependency analysis.
+This optimizations reduce file access to the minimum.
+In a larger test multi-project the time used for file checks was dropped from about 40 seconds to less than two seconds on a Windows machine.
+
+== Parallel execution
+
+A new experimental feature was introduced allowing the parallel execution of targets.
+This feature is experimental, because there are known issues.
+The current implementation utilizes Scalas built-in parallel collections feature which suffers from various issues, especially non configurability and error detection/reporting.
+But in general, that feature just works and might help you to reduce your build times, in particular if you have many targets or projects.
+The feature can be enabled with the commandline option `--experimental-parallel`.
+
+== Generic scheme handler for Sources and Javadoc
+
+To support the Eclipse IDE SBuild Plugin, the generic scheme handlers `"source:"` and `"javadoc:"` are introduced.
+In the current version, they support the default `"mvn:"` scheme.
+It is planned to support more schemes in a configurable way. 
+
+The Eclipse SBuild Plugin since version 0.4.2 already uses these schemes to retrieve source and javadoc packages.
+
+
+== Commandline shortcuts
+
+This is a small nice commandline productivity feature: Targets can be written in a shorter notation.
+The short notation needs to contain at least the first character and all upper case characters.
+This is best understood by an example.
+A target `"initDatabase"` might be written as `"iD"`.
+But those shortcuts only work if they match exactly one target.
+If you have two targets `"initDatabase"` and `"installDocumentation"`, you need to make the shortcut unique by adding additional characters.
+Here are some possibilities to uniquely reference `"initDatabase"`: `"iniD"`, `"iDa"`, `"initD"`, and so on.
+
+
+== Buildfile relative paths
+
+Until now, with `Path` you were able to specify paths relative to the project build file.
+
+New in this version is the ability to specify paths relative to a directory which contains included files (with `@include`).
+For example, if you include a file `"Config.scala"` which contains a scala class `"Config"` from another directory,
+you can now refer to resources relative to that directory by writing `Path[Config]("a-resource-next-to-Config.scala")`.
+If the file contains a Scala object, you need to write `Path[Config.type]("a-resource-next-to-Config.scala")`. 
+
+
+== Fine grained cache eviction
+
+With `Target.evictCache("targetName")` it is now possible to selectively evict the cache of a specific cacheable target.
+This might be useful if you have more than one cacheable target and want to provide dedicated "clean" targets for each of them.
