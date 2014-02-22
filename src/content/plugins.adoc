@@ -30,6 +30,11 @@ Here, you can find a list of known SBuild Plugins. You wrote a plugin and want i
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.asciidoctor[Maven]
 
+| https://github.com/SBuild-org/sbuild-clean-plugin[Clean Plugin^]
+| Provides a customizable clean target.
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-clean-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.clean[Maven]
+
 | https://github.com/SBuild-org/sbuild-maven-deploy[Maven Deploy Plugin^]
 | Allows deployments to Maven repositories like the Sonatype OSS Nexus Repository
 | Apache 2.0
