@@ -30,20 +30,30 @@ Here, you can find a list of known SBuild Plugins. You wrote a plugin and want i
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-asciidoctor-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.asciidoctor[Maven]
 
+| https://github.com/SBuild-org/sbuild-maven-deploy[Maven Deploy Plugin^]
+| Allows deployments to Maven repositories like the Sonatype OSS Nexus Repository
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-maven-deploy[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.mavendeploy[Maven]
+
 | https://github.com/SBuild-org/sbuild-https-plugin[Https Plugin^]
 | Provides an HTTPS SchemeHandler.
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-https-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.https[Maven]
 
+| https://github.com/SBuild-org/sbuild-javac-plugin[Javac Plugin^]
+| Provides a Java Compiler and compile targets
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-javac-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.javac[Maven]
+
+| https://github.com/SBuild-org/sbuild-javaproject-plugin[Java Project Plugin^]
+| Provides typical targets for Java Projects.
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-javaproject-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.javaproject[Maven]
+
 | https://github.com/SBuild-org/sbuild-jbake[JBake Plugin^]
 | Integrates the static page generator JBake
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-jbake[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.jbake[Maven]
-
-| https://github.com/SBuild-org/sbuild-maven-deploy[Maven Deploy Plugin^]
-| Allows deployments to Maven repositories like the Sonatype OSS Nexus Repository
-| Apache 2.0
-| https://github.com/SBuild-org/sbuild-maven-deploy[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.mavendeploy[Maven]
 
 | https://github.com/SBuild-org/sbuild-plugin-plugin[SBuild Plugin Plugin^]
 | A Plugin to create SBuild Plugins
