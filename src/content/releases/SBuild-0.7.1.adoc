@@ -17,9 +17,9 @@ Release date: 2013-12-20
 * Documentation process is currently in progress... 
 * link:/news/2013/12/20/The-Plugin-System-of-SBuild-0.7.1.html[The Plugin System of SBuild 0.7.1]
 * link:/doc/sbuild/0.7.1[Build Documentation]
-* "SBuild Public API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package
-* "SBuild Addons API Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package
-* "SBuild Ant Support and Wrapper Reference (Scaladoc) ":/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package
+* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
 
 [#Changelog]
 == Changelog
@@ -40,4 +40,3 @@ Changes since link:SBuild-0.7.0.html[SBuild 0.7.0]
 
 
 All Releases: link:index.html[Release History]
-
