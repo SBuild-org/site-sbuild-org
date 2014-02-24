@@ -176,7 +176,7 @@ TBD
 TBD
 
 
-TDB
+TBD
 
 // Targets
 // Dependencies
@@ -185,31 +185,35 @@ TDB
 
 === Using Plugins
 
-TDB
+TBD
 
 === Multi-Project Setups
 
-TDB
+TBD
+
+=== Working with Include-Files
+
+TBD
 
 == Advanced topics
 
 === Understanding SchemeHandler's
 
-TDB
+TBD
 
 === Writing Plugins
 
 ==== Plugin API
 
-TDB
+TBD
 
 ==== Conventions
 
-TDB 
+TBD 
 
 ==== Plugin Classloading
 
-TDB
+TBD
 
 == Vision
 
