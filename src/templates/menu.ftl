@@ -31,6 +31,7 @@
                   <ul class="dropdown-menu" role="menu">
                     <li><a href="/doc/sbuild/${config.cursbuildversion}">SBuild Reference Manual <span class="muted">${config.cursbuildversion}</span></a></li>
                     <li><a href="http://sbuild.tototec.de/static/doc/sbuild/${config.cursbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package">SBuild Core ScalaDoc <span class="muted">${config.cursbuildversion}</span></a></li>
+                    <li><a href="/releases">Release History</a></li>
                     <li><a href="/faq">FAQ</a></li>
                   </ul>
                 </li>
