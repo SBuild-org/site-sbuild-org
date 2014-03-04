@@ -14,8 +14,14 @@
 	<!-- TWitter card -->
 	<#if (content.twitter_card)??><meta name="twitter:card" content="${content.twitter_card}">
 	<#else><meta name="twitter:card" content="${twitter_card}"></#if>
-	<#if (content.twitter_site)??><meta name="twitter:site" content="${content.twitter_site}"></#if>
-	<#if (content.twitter_creator)??><meta name="twitter:creator" content="${content.twitter_creator}"></#if>
+	<#if (content.twitter_site)??><meta name="twitter:site" content="${content.twitter_site}">
+    <#else><meta name="twitter:site" content="@SBuildOrg">
+	</#if>
+	<#if (content.twitter_creator)??><meta name="twitter:creator" content="${content.twitter_creator}">
+    <#else><#if content.author?? && content.author == "Tobias Roeser"><meta name="twitter:creator" content="@TobiasRoeser">
+	       <#else><meta name="twitter:creator" content="@SBuildOrg">
+	       </#if>
+	</#if>
 	<#if content.twitter_title??><meta name="twitter:title" content="${content.twitter_title}">
 	<#else><meta name="twitter:title" content="${content.title}"></#if>
 	<#if content.twitter_description??><meta name="twitter:description" content="${content.twitter_description}">

@@ -47,7 +47,7 @@
                    <ul class="dropdown-menu" role="menu">
                     <li><a href="https://github.com/SBuild-org/sbuild"><i class="icon-github"></i> GitHub</a></li>
                     <li><a href="https://twitter.com/SBuildOrg"><i class="icon-twitter"></i> Twitter <small class="muted">@SBuildOrg</small></a></li>
-                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild" ><i class="icon-comment"></i> IRC <small class="muted">#sbuild</small></a></li>
+                    <li><a href="http://webchat.freenode.net/?channels=%23sbuild" ><i class="icon-comments"></i> IRC <small class="muted">#sbuild</small></a></li>
                     <li><a href="https://groups.google.com/forum/#!forum/sbuild-dev"><i class="icon-envelope"></i> Developers <small class="muted">sbuild-dev</small></a></li>
                     <li><a href="https://groups.google.com/forum/#!forum/sbuild-user"><i class="icon-envelope"></i> User Forum <small class="muted">sbuild-user</small></a></li>
                   </ul>
