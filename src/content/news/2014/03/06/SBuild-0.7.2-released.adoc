@@ -1,0 +1,22 @@
+= SBuild 0.7.2 released
+:author: Tobias Roeser
+:revdate: 2014-03-06
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: SBuild 0.7.2 was released and brings a refined Plugin API as well as improvements and bug fixes.
+
+Today, we released link:/releases/SBuild-0.7.2.html[SBuild 0.7.2]. 
+
+
+In this release, again, we refined the *Plugin API*. You can now express inter-plug-in dependencies by extending the `PluginWithDependencies` trait.
+Also, your plugin factory can get notified whenever your plug-in's configuration was changes by extending the `PluginConfigureAware` trait.
+This will be especially useful, if you want to push configuration changes forward to plugins your plugin depends on.  
+Both changes open the door for meta plugins, that (transparently) rely on other plugins to do the work.
+
+Also some other improvements and bug fixes found their way into this version.
+E.g. the `ZipSchemeHandler` was extended to allow extraction from ZIP resources based on regular expression patterns.
+Also, this version of SBuild should run with a Java 6 Runtime again, which was not the case with version link:/releases/SBuild-0.7.0.html[0.7.0] and link:/releases/SBuild-0.7.1.html[0.7.1].
+
+For a complete list of changes read the link:/releases//SBuild-0.7.2.html#Changelog[Changelog].
+

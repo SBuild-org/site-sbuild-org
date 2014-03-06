@@ -3,23 +3,23 @@ Tobias Roeser
 2013-12-20
 :jbake-type: page
 :jbake-status: published
+:sbuildversion: 0.7.1
 
 Release date: 2013-12-20
 
 == Download
 
-* SBuild Distribution: http://sbuild.tototec.de/sbuild/attachments/download/87/sbuild-0.7.1-dist.zip[sbuild-0.7.1-dist.zip]
-* http://sbuild.tototec.de/sbuild/projects/sbuild/files[Other downloads...]
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
 
 
 == Online Documentation
 
-* Documentation process is currently in progress... 
 * link:/doc/sbuild/0.7.1[SBuild Documentation]
 * link:/news/2013/12/20/The-Plugin-System-of-SBuild-0.7.1.html[The Plugin System of SBuild 0.7.1]
-* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
-* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
-* http://sbuild.tototec.de/static/doc/sbuild/0.7.1/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+* http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* http://sbuild.tototec.de/static/doc/sbuild/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
 
 [#Changelog]
 == Changelog

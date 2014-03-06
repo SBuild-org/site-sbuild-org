@@ -1,0 +1,44 @@
+= SBuild 0.7.2
+Tobias Roeser
+2014-03-06
+:jbake-type: page
+:jbake-status: published
+:previoussbuildversion: 0.7.1
+:sbuildversion: 0.7.2
+
+Release date: 2014-03-06
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:/download[Other downloads...]
+
+
+== Online Documentation
+
+* Documentation process is currently in progress... 
+* link:/doc/sbuild/{sbuildversion}[SBuild Documentation]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+.SBuild API
+* ZipSchemeHandler: Added new regex parameter, to support extraction of multiple resources based on that regex.
+* Plugins can now express dependencies to other plugins with the new PluginWithDependencies trait.
+* Plugins can now react on configuration changes by implementing the PluginConfigureAware trait. 
+  This is especially useful for meta-plugins that want to push their own configuration to other plugins.
+* Experimental: Added `Plugin.postConfigure` to have an very late configuration phase, after the body of the buildscript and other plugins have been applied.
+
+.SBuild Runner
+* Added new `--search-targets` commandline option to search for targets with a regular expression pattern.
+* This version again work with a Java 6 Runtime (0.7.0 and 0.7.1 do not).
+* In `--list-targets` (and related) show files relative to the project directory if possible.
+
+
+All Releases: link:index.html[Release History]
