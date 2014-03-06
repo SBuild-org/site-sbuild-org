@@ -29,9 +29,9 @@ Release date: 2014-03-06
 Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
 
 .SBuild API
-* ZipSchemeHandler: Added new regex parameter, to support extraction of multiple resources based on that regex.
-* Plugins can now express dependencies to other plugins with the new PluginWithDependencies trait.
-* Plugins can now react on configuration changes by implementing the PluginConfigureAware trait. 
+* `ZipSchemeHandler`: Added new regex parameter, to support extraction of multiple resources based on that regex.
+* Plugins can now express dependencies to other plugins with the new `PluginWithDependencies` trait.
+* Plugins can now react on configuration changes by implementing the `PluginConfigureAware` trait. 
   This is especially useful for meta-plugins that want to push their own configuration to other plugins.
 * Experimental: Added `Plugin.postConfigure` to have an very late configuration phase, after the body of the buildscript and other plugins have been applied.
 

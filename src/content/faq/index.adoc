@@ -19,4 +19,3 @@ We have rough cut milestones, but new features might come and go. Releases were 
 We give found bugs a high priority. 
 If you need some of the latest fixes or features and for some reasons it is not easily possible for you to build the latest SBuild yourself, just tell us your demand, and we will try to get a new release out as soon as possible.
 
-   
