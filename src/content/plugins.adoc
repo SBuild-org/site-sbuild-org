@@ -7,7 +7,7 @@ Tobias Roeser
 SBuild's plugin mechanism allows you to extends your Buildscript very easily.
 
 // TODO: add link to plugin writers guide
-If you are interested in writing your own SBuild Plugin, please visit the Plugin Writers Guide.
+If you are interested in writing your own SBuild Plugin, please read the link:/doc/sbuild/{cursbuildversion}/#writing_plugins["Writing Plugins" section of the Reference Manual].
 
 == Plugins
 
