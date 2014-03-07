@@ -3,6 +3,7 @@ Tobias Roeser
 2014-02-22
 :jbake-type: page
 :jbake-status: published
+:summary: SBuild's plugin mechanism allows you to extends your Buildscript very easily. Here, you can find a list of know SBuild Plugins.
 
 SBuild's plugin mechanism allows you to extends your Buildscript very easily.
 
