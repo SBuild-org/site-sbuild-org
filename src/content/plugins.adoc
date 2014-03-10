@@ -66,4 +66,9 @@ Here, you can find a list of known SBuild Plugins. You wrote a plugin and want i
 | Apache 2.0
 | https://github.com/SBuild-org/sbuild-plugin-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.sbuildplugin[Maven]
 
+| https://github.com/SBuild-org/sbuild-sourcescheme-plugin[SBuild Source Scheme Plugin^]
+| Provides an extensible scheme handler to provide source jars for arbitrary dependencies.
+| Apache 2.0
+| https://github.com/SBuild-org/sbuild-sourcescheme-plugin[Github], http://repo1.maven.org/maven2/org/sbuild/org.sbuild.plugins.sourcescheme[Maven]
+
 |====
