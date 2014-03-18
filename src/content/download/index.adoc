@@ -4,12 +4,21 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 
+
+:sbuildversion: 0.7.3
+
+== SBuild {sbuildversion}
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+
+// TODO: single jars
+
+
 :sbuildversion: 0.7.2
 
 == SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
-* http://sbuild.tototec.de/sbuild/projects/sbuild/files[Other downloads...]
 
 
 

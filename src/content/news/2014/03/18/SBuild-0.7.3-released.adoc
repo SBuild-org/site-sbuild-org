@@ -1,0 +1,19 @@
+= SBuild 0.7.3 released
+:author: Tobias Roeser
+:revdate: 2014-03-18
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: The new SBuild 0.7.3 release comes with a fix for a sporadically blocking issue and some console output improvements.
+
+Today, we released link:/releases/SBuild-0.7.3.html[SBuild 0.7.3]. 
+
+This release fixes a serious blocking issue, where the sbuild application just hangs without finishing it's work.
+This bug was introduced in the development cycle of SBuild 0.7.2 and is not present in earlier versions.
+We recommend all users, especially those of SBuild 0.7.2, to update!
+
+All other changes are related to the output of the commandline tool.
+Especially the `--help` output now used the full terminal width.
+
+For a complete list of changes read the link:/releases//SBuild-0.7.3.html#Changelog[Changelog].
+
