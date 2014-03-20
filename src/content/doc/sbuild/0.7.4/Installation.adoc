@@ -1,7 +1,7 @@
 = Installation
 :author: Tobias Roeser
-:revdate: 2014-03-06
-:sbuildversion: 0.7.2
+:revdate: 2014-03-20
+:sbuildversion: 0.7.4
 
 == Requirements
 

@@ -9,7 +9,7 @@ SBuild requires an working Java 6 Runtime. All other dependencies are bundled wi
 
 == Download
 
-You can download the latest stable SBuild distribution from the http://sbuild.tototec.de/sbuild/projects/sbuild/files[download page].
+You can download the latest stable SBuild distribution from the http://sbuild.org/download[download page].
 
 == Installation 
 

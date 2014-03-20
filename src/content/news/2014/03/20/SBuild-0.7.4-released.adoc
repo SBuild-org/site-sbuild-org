@@ -1,0 +1,13 @@
+= SBuild 0.7.4 released
+:author: Tobias Roeser
+:revdate: 2014-03-20
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: SBuild 0.7.4 fixes a potential deadlock issue in 0.7.2 and 0.7.3.
+
+link:/releases/SBuild-0.7.4.html[SBuild 0.7.4] fixed a potential deadlock issue in the project class loader of 0.7.2 and 0.7.3. 
+We recommend all users, especially those of SBuild 0.7.2 and 0.7.3, to update!
+
+For a complete list of changes read the link:/releases//SBuild-0.7.4.html#Changelog[Changelog].
+
