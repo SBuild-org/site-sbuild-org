@@ -19,8 +19,8 @@ SBuild runs under all major operating systems, that have a Java 6 Runtime enviro
 
 You should check, if your Linux distribution provides ready to install packages for SBuild, 
 if so, you may want to install them in the specific way of your Linux distribution.
-For Gentoo Linux, you can find an https://lepetitfou.dyndns.org/svn/gentoo/lefous_portage_overlay/dev-java/sbuild-bin/[ebuild for SBuild] 
-in http://lepetitfou.dyndns.org/redmine/projects/lefousportageoverlay[lefous portage overlay].
+For Gentoo Linux, you can find an https://github.com/lefou/lefous_portage_overlay/tree/master/dev-java/sbuild-bin[ebuild for SBuild] 
+in https://github.com/lefou/lefous_portage_overlay[lefous portage overlay].
 
 If you used the installation procedure of you Linux distribution you were done here, else continue.
 
