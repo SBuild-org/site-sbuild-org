@@ -17,3 +17,4 @@ Especially the `--help` output now used the full terminal width.
 
 For a complete list of changes read the link:/releases//SBuild-0.7.3.html#Changelog[Changelog].
 
+*Update (2014-03-25):* As it turned out, the blocking issues was not correctly fixed in this release but in link:/releases/SBuild-0.7.4.html[SBuild 0.7.4]. So please use SBuild 0.7.4 instead. 
