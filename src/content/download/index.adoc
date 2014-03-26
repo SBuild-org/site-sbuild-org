@@ -1,9 +1,17 @@
 = Download
 Tobias Roeser
-2013-12-13
+2014-03-26
 :jbake-type: page
 :jbake-status: published
 
+
+:sbuildversion: 0.7.4
+
+== SBuild {sbuildversion}
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+
+// TODO: single jars
 
 :sbuildversion: 0.7.3
 
