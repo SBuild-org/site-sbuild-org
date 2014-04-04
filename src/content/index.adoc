@@ -1,5 +1,5 @@
 = SBuild - the magic-free yet powerful build tool
-:revdate: 2014-02-14
+:revdate: 2014-04-04
 :jbake-type: index2
 :jbake-status: published
 :link-sbuild-dev: https://groups.google.com/forum/#!forum/sbuild-dev
