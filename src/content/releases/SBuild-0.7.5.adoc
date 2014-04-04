@@ -31,7 +31,5 @@ Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildver
 * Disabled parallel classloading in plugin classloader. This effectivly speeds
   up initialization time and avoids some not that well understood linkage
   errors.
-* Removed doc submodule. Documentation of SBuild is in project
-  https://github.com/SBuild-org/site-sbuild-org.
 
 All Releases: link:index.html[Release History]
