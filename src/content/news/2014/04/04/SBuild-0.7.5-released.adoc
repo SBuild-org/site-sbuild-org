@@ -1,0 +1,13 @@
+= SBuild 0.7.5 released
+:author: Tobias Roeser
+:revdate: 2014-04-04
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: Going to the ScalarConf in Warsaw, Poland from Leipzig, Germany takes a lot of time. We used it wisely and made another SBuild release.
+
+Going to the ScalarConf in Warsaw, Poland from Leipzig, Germany takes a lot of time. We used it wisely and made another SBuild release.
+
+link:/releases/SBuild-0.7.5.html[SBuild 0.7.5] fixes another potential classloading issue and offers speed improvements in the initialization phase.
+
+For a complete list of changes read the link:/releases//SBuild-0.7.5.html#Changelog[Changelog].
