@@ -5,6 +5,7 @@ Tobias Roeser
 :jbake-type: page
 :summary: Release History
 
+* 2014-05-08: link:SBuild-Eclipse-Plugin-0.4.3.html[SBuild Eclipse Plugin 0.4.3]
 * 2014-04-04: link:SBuild-0.7.5.html[SBuild 0.7.5]
 * 2014-03-20: link:SBuild-0.7.4.html[SBuild 0.7.4]
 * 2014-03-18: link:SBuild-0.7.3.html[SBuild 0.7.3]

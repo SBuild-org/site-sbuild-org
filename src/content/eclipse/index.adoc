@@ -3,14 +3,14 @@ Tobias Roeser
 2014-02-04
 :jbake-type: page
 :jbake-status: published
-:eclipsepluginversion: 0.4.2
+:eclipsepluginversion: 0.4.3
 :toc:
 :toc-placement: preamble
 :summary: The SBuild Eclipse Plugin integrates SBuild into the Eclipse IDE by providing a classpath container, implicit download of dependencies as well as JavaDoc and source archives, automatic recompilation and checking of buildfiles and workspace resolution of dependent projects.
 
 The SBuild Eclipse Plugin extends your Eclipse IDE with SBuild support.
 
-Current version is link:/releases/SBuild-Eclipse-Plugin-0.4.2.html[0.4.2].
+Current version is link:/releases/SBuild-Eclipse-Plugin-{eclipsepluginversion}.html[{eclipsepluginversion}].
 
 == Description
 
@@ -20,6 +20,7 @@ SBuild Eclipse Plugin integrates SBuild into the Eclipse IDE.  This plugin provi
 * Download of Missing Dependencies - Dependencies will be automatically downloaded
 * Workspace Resolution - Dependencies, also open in the Eclipse Workspace can be referenced directly
 * Change Detection -  Automatic update of the classpath container when the buildfile changes
+* Error Markers in Buildfile Editor
 
 These features are planned to be implemented:
 

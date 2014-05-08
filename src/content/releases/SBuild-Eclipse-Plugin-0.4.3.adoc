@@ -1,0 +1,32 @@
+= SBuild Eclipse Plugin 0.4.3
+Tobias Roeser
+2014-05-08
+:jbake-type: page
+:jbake-status: published
+:previouseclipsepluginversion: 0.4.2
+:eclipsepluginversion: 0.4.3
+
+Release date: 2014-05-08
+
+== Requirements
+
+* Eclipse 3.4 or newer
+* SBuild 0.4.0 or newer
+
+== Download
+
+* Eclipse Update Site: http://sbuild.tototec.de/svn/eclipse-update-site/stable
+* Just the plugin: http://sbuild.tototec.de/sbuild/attachments/download/66/de.tototec.sbuild.eclipse.plugin_0.4.2.jar[de.tototec.sbuild.eclipse.plugin_0.4.2.jar]
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-Eclipse-Plugin-{previouseclipsepluginversion}.html[SBuild Eclipse Plugin {previouseclipsepluginversion}]
+
+* Detect changes of included resources and refresh all affected projects.
+* Better error marker when buildfile could not be compiled. It not shows the
+  concrete compiler error/waring and the correct line of the issue when the
+  information is available (since SBuild 0.5.0.9004).
+
+
+All Releases: link:index.html[Release History]
