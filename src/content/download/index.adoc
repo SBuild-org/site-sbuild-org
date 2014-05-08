@@ -5,6 +5,13 @@ Tobias Roeser
 :jbake-status: published
 
 
+:sbuildversion: 0.7.9010.0-8-0-M1
+
+== SBuild {sbuildversion}
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+
+
 :sbuildversion: 0.7.5
 
 == SBuild {sbuildversion}
