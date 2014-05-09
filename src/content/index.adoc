@@ -19,7 +19,7 @@ Project scripts will be automatically compiled on the first run. Subsequent SBui
 === Standardized Projects plus Flexibility  
 
 With a growing number of available plugins SBuild encourages standardized project setups, but without compromising flexibility.
-An any time, you can customize your build when needed.
+At any time, you can customize your build when needed.
 
 === Magic free
 
@@ -27,13 +27,13 @@ SBuild does not make any assumptions about your build environment. It does not g
 You can always know what it will do based on one single entry point: the buildfile.
 Your co-workers and your CI team with thank you, afterwards.
 
-We believe, this is a requirement to achieve reproducible builds over time. 
+We believe, this is a requirement to achieve stable and reproducible builds over time. 
 
 === Easy Integration of Existing Tools
 
 SBuild integration capabilities allow tools like Ant tasks, Eclipse Aether (Maven) or Adept to integrate seamlessly. 
 
-SBuild's plugin container is capable to isolate plugin implementations, so that plugins will not inferfere others.
+SBuild's plugin container is capable to isolate plugin implementations, so that plugins will not interfere others.
 Each plugin has fine control which API's it will export to it's consumer.
 
 === Open
@@ -41,7 +41,7 @@ Each plugin has fine control which API's it will export to it's consumer.
 SBuild is developed and published under the http://www.apache.org/licenses/LICENSE-2.0[Apache License, Version 2.0].
 The source code is hosted publicly on https://github.com/SBuild-org/sbuild[GitHub].
 
-You can ask questions on the mailing lists ({link-sbuild-dev}[[1]], {link-sbuild-user}[[2]]), irc://irc.freenode.org/#sbuild[IRC], or https://twitter.com/SBuildOrg[Twitter].
+You can ask questions on the mailing lists ({link-sbuild-dev}[sbuild-dev], {link-sbuild-user}[sbuild-user]), irc://irc.freenode.org/#sbuild[IRC], or https://twitter.com/SBuildOrg[Twitter].
 You can report bugs or new feature ideas on our issue tracker on https://github.com/SBuild-org/sbuild/issues[GitHub].
 And any kind of contribution, be it pull requests, ideas, documentation or any other feedback is much appreciated.
 

@@ -32,6 +32,7 @@ These features are planned to be implemented:
 * http://eclipse.org[Eclipse 3.4] or newer
 * SBuild 0.4.0 or newer
 
+[#InstallationViaUpdateSite]
 == Installation via Update-Site
 
 Installation via Update-Site is the preferred installation routine.
