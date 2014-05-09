@@ -1,0 +1,23 @@
+= SBuild Eclipse Plugin 0.4.3 released
+:author: Tobias Roeser
+:revdate: 2014-05-09
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release, Eclipse 
+:summary: This maintenance release of the SBuild Eclipse Plugin improves the error highlighting in the buildscript editor and fixes some refresh problems.
+
+We published a new maintance release of the link:/eclipse[SBuild Eclipse Plugin].
+It further improves the experience for writers of buildscripts.
+Errors in the buildscript are now hightlighted in the left margin of the editor and some refresh problems were fixed.
+Read the full link:/releases/SBuild-Eclipse-Plugin-0.4.3.html#ChangeLog[changelog here].
+
+This version is compatible to all currently released stable SBuild versions starting from 0.4.0.
+
+We are also working on a new version which will support the currently in development 0.8.x version of SBuild, and tackle some difficulties with the concurrent OSGi support of Scala 2.10 and Scala 2.11.
+But we hope, to have Eclipse support for SBuild 0.8 as soon as it is out. 
+
+You can download the Eclipse Plugin from it's link:/eclipse#InstallationViaUpdateSite[update site].
+If you have the SBuild Eclipse Plugin already installed, the Update Manager will automatically find the new version.
+
+Please refer to the link:/eclipse[SBuild Eclipse Plugin page] for futher information.
+ 
