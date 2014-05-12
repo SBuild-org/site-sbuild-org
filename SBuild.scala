@@ -13,8 +13,7 @@ class SBuild(implicit _project: Project) {
   Plugin[JBake] configure { _.copy(
     sourceDir = Path("src"),
     targetDir = Path("target"),
-//    jbakeVersion = JBakeVersion.Packaged("2.2.1")
-    jbakeVersion = JBakeVersion.Packaged("2.3.0-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.3.0-SNAPSHOT-bin.zip")
+    jbakeVersion = JBakeVersion.Packaged("2.3.0")
    ) }
 
     Target("phony:copy-heavy-assets") exec {
@@ -24,7 +23,7 @@ class SBuild(implicit _project: Project) {
   Plugin[JBake]("test") configure (_.copy(
     sourceDir = Path("target/test-src"),
     targetDir = Path("target/test-dest"),
-    jbakeVersion = JBakeVersion.Packaged("2.3.0-SNAPSHOT", "/home/lefou/work/tmp/jbake.git/dist/jbake-2.3.0-SNAPSHOT-bin.zip")
+    jbakeVersion = JBakeVersion.Packaged("2.3.0")
   ))
 
 }
