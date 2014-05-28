@@ -1,0 +1,100 @@
+= Installation
+:author: Tobias Roeser
+:revdate: 2014-05-28
+:sbuildversion: 0.7.6
+
+== Requirements
+
+SBuild requires an working Java 6 Runtime. All other dependencies are bundled within the SBuild distribution ZIP file.
+
+== Download
+
+You can download the latest stable SBuild distribution from the http://sbuild.org/download[download page].
+
+== Installation
+
+SBuild runs under all major operating systems, that have a Java 6 Runtime environment.
+
+=== Linux
+
+You should check, if your Linux distribution provides ready to install packages for SBuild,
+if so, you may want to install them in the specific way of your Linux distribution.
+For Gentoo Linux, you can find an https://github.com/lefou/lefous_portage_overlay/tree/master/dev-java/sbuild-bin[ebuild for SBuild]
+in https://github.com/lefou/lefous_portage_overlay[lefous portage overlay].
+
+If you used the installation procedure of you Linux distribution you were done here, else continue.
+
+Unpack the ZIP file content into a directory of your choice, e.g. +/opt/sbuild-{sbuildversion}+.
+
+Make sure, the expanded file +/opt/sbuild-{sbuildversion}/bin/sbuild+ is executable, e.g. with +chmod -x /opt/sbuild-{sbuildversion}/bin/sbuild+.
+
+Add the binary directory (e.g. +/opt/sbuild-{sbuildversion}/bin/+) to your search path: +PATH=/opt/sbuild-{sbuildversion}/bin:$PATH+
+
+
+=== Windows
+
+Unpack the ZIP file content into an directory of your choice, e.g. +C:\Program Files\sbuild-{sbuildversion}+.
+After unpacking, you should see the sub directories `bin`, `lib` and `doc`.
+
+Add the environment variable `SBUILD_HOME` with the value of that directory, e.g. +SBUILD_HOME=C:\Program Files\sbuild-{sbuildversion}+
+
+[NOTE]
+.Wasn't there a `SBUILD_HOME` variable, I needed to set under Windows?
+====
+Yes, there was, but only because we had a bug in our batch script, which is fixed now, thanks to Tobias Lahn.
+====
+
+
+Add the path of the `bin` directory to the `PATH` variable: `PATH=%SBUILD_HOME%\bin:%PATH%`
+
+[CAUTION]
+.Special Notes for Cygwin Users
+====
+If running sbuild under cygwin, you may see the following error message:
+
+----
+$ sbuild all
+java.lang.NoClassDefFoundError: de/tototec/sbuild/runner/SBuildRunner
+Caused by: java.lang.ClassNotFoundException: de.tototec.sbuild.runner.SBuildRunner
+        at java.net.URLClassLoader$1.run(Unknown Source)
+        at java.security.AccessController.doPrivileged(Native Method)
+        at java.net.URLClassLoader.findClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+        at sun.misc.Launcher$AppClassLoader.loadClass(Unknown Source)
+        at java.lang.ClassLoader.loadClass(Unknown Source)
+Could not find the main class: de.tototec.sbuild.runner.SBuildRunner.  Program will exit.
+Exception in thread "main"
+----
+
+This is because cygwin does not execute the +sbuild.bat+ file but the +sbuild+ shell script.
+You may either call `sbuild.bat` directly, or delete the `PATH/bin/sbuild` file.
+
+The reason is, that Java on Windows accepts the `-classpath` option with `:` (double colon) separator whereas on Linux, Mac and other system, it expects `;` (semi colon) as separator.
+In most cygwin environments, a Java runtime environment for Windows is used.
+If you built your JRE for or in cygwin, you will most probably not see this issue at all.
+====
+
+
+
+== Check the installation
+
+Open an new terminal window and execute the command: +sbuild --version+
+
+You should see something like this:
+
+.Output of `sbuild --version`
+[subs="attributes"]
+----
+$ sbuild --version
+SBuild {sbuildversion} (c) 2011 - 2014, ToToTec GbR, Tobias Roeser
+----
+
+
+Congratulations, you have successfully finished your SBuild installation.
+
+== Troubleshooting
+
+// TODO: no longer forums but mailing lists
+If you went into trouble, you may want to search the https://sbuild.tototec.de/sbuild/projects/sbuild/boards[fourms] or create a new thread.
+If you found a bug please https://sbuild.tototec.de/sbuild/projects/sbuild/issues[check, if there is already a ticket] for it or https://sbuild.tototec.de/sbuild/projects/sbuild/issues/new[create a new ticket].
+
