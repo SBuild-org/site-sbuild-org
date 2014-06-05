@@ -1,0 +1,21 @@
+= SBuild 0.7.6 - ScalaDays Hackathon Release
+:author: Tobias Roeser
+:revdate: 2014-05-31
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: We released SBuild 0.7.6 for a smooth ScalaDays Hackathon experience. It brings various fixed for the 0.7.x line.
+
+
+Another Hackathon, another release. 
+I'm happy to announce  link:/releases//SBuild-0.7.6.html[SBuild 0.7.6], the next maintenance release of the SBuild 0.7.x line.
+Looks like, having some community contact is good for the project. ;-)
+
+We finally managed to get the plugin classloading right and fixed a lot of typos in output messages all over the code base.
+Also this version comes with some HTTP proxy support. Read the full link:/releases//SBuild-0.7.6.html#Changelog[changelog here].
+
+I'm looking forward to todays Hackathon. If everything goes well, we will have a SBuild Server for the upcoming SBuild 0.8 soon.
+
+Have fun
+
+Tobias

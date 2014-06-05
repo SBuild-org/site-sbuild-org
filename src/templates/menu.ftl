@@ -21,7 +21,7 @@
                     <#list posts as post>
                       <#if post.status == "published" && postcount < maxpostcount>
                         <#assign postcount = postcount + 1>
-                        <li><a href="${post.uri}"><#escape x as x?xml>${post.title}</#escape> <small class="muted">- ${post.date?string("dd MMMM yyyy")}</small></a></li>
+                        <li><a href="/${post.uri}"><#escape x as x?xml>${post.title}</#escape> <small class="muted">- ${post.date?string("dd MMMM yyyy")}</small></a></li>
                       </#if>
                     </#list>
                     <li><a href="/news">older News...</a><li>

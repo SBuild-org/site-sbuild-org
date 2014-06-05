@@ -1,0 +1,39 @@
+= SBuild 0.7.6
+Tobias Roeser
+2014-05-31
+:jbake-type: page
+:jbake-status: published
+:previoussbuildversion: 0.7.5
+:sbuildversion: 0.7.6
+
+Release date: 2014-05-31
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:/download[Other downloads...]
+
+
+== Online Documentation
+
+* link:/doc/sbuild/{sbuildversion}[SBuild Documentation]
+* link:/news/2014/05/31/SBuild-0.7.6-released.html[Announcement]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+.SBuild Runner
+* Corrected parallel classloading according to Java ClassLoader spec.
+* Fixed sbuild.bat script. The SBUILD_HOME environment variable is no longer
+  needed.
+* Support for HTTP proxies in HTTP and MVN scheme handlers.
+* Automatically use http_proxy environment variable if present.
+
+
+All Releases: link:index.html[Release History]

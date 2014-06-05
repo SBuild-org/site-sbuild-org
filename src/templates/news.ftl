@@ -11,11 +11,11 @@
 	
 	<#list posts as post>
   		<#if (post.status == "published" && post.date??)>
-  			<h3><a href="${post.uri}"><#escape x as x?xml>${post.title}</#escape></a></h3>
+  			<h3><a href="/${post.uri}"><#escape x as x?xml>${post.title}</#escape></a></h3>
   			<p><em>${post.date?string("dd MMMM yyyy")} <#if post.author??>by ${post.author}</#if></em></p>
   			<#if post.summary??>
   			    <p>${post.summary}</p>
-  			    <p><a href="${post.uri}">Read mode...</a></p>
+  			    <p><a href="/${post.uri}">Read mode...</a></p>
   			  <#else>
     			<p>${post.body}</p>
   			</#if>

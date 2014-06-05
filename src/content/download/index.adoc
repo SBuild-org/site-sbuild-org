@@ -4,24 +4,33 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 
+:sbuildversion: 0.7.6
 
-:sbuildversion: 0.7.9010.0-8-0-M1
-
-== SBuild {sbuildversion}
+== SBuild {sbuildversion} - Current Stable
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 
 
+:sbuildversion: 0.7.9010.0-8-0-M1
+
+== SBuild 0.8.0 M1 - Current Development Milestone
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+
+
+
+== Older Releases
+
 :sbuildversion: 0.7.5
 
-== SBuild {sbuildversion}
+=== SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 
 
 :sbuildversion: 0.7.4
 
-== SBuild {sbuildversion}
+=== SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 
@@ -29,7 +38,7 @@ Tobias Roeser
 
 :sbuildversion: 0.7.3
 
-== SBuild {sbuildversion}
+=== SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 
@@ -38,7 +47,7 @@ Tobias Roeser
 
 :sbuildversion: 0.7.2
 
-== SBuild {sbuildversion}
+=== SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 
@@ -46,12 +55,10 @@ Tobias Roeser
 
 :sbuildversion: 0.7.1
 
-== SBuild {sbuildversion}
+=== SBuild {sbuildversion}
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
 * http://sbuild.tototec.de/sbuild/projects/sbuild/files[Other downloads...]
 
-
-== Older Releases
 
 Please download older releases from http://sbuild.tototec.de/sbuild/projects/sbuild/files[sbuild.tototec.de].
