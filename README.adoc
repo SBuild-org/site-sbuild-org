@@ -4,18 +4,14 @@ This project contains the sources to build the SBuild home page at http://sbuild
 
 == How to build the website
 
-Actually, we need some unreleased features of JBake, to build the site. Therefore, you need the latest master version of it.
-
-TODO: Script the build of JBake master in SBuild
-
 ----
-sbuild clean jbake
+LC_ALL=C sbuild clean jbake
 ----
 
 To test the site locally, run:
 
 ----
-sbuild clean serve-jbake
+LC_ALL=C sbuild clean serve-jbake
 ----
 
 == Updating the site after a new SBuild release

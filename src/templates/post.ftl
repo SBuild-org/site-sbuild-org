@@ -31,13 +31,13 @@
 		
 	    <ul class="pager">
 		  <#if prevUrl??>
-		    <li class="previous"><a href="${prevUrl}">&larr; Older</a></li>
+		    <li class="previous"><a href="/${prevUrl}">&larr; Older</a></li>
 		  <#else>
 		    <li class="previous disabled"><a href="#">&larr; Older</a></li>
 		  </#if>
 		    <li><a href="/news">List all news items</a></li>
 		  <#if nextUrl??>
-		    <li class="next"><a href="${nextUrl}">Newer &rarr;</a></li>
+		    <li class="next"><a href="/${nextUrl}">Newer &rarr;</a></li>
 		  <#else>
 		    <li class="next disabled"><a href="#">Newer &rarr;</a></li>
 		  </#if>
