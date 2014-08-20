@@ -4,11 +4,6 @@
 	
 	<#include "menu.ftl">
 
-    <h1><small>
-    This page will be the new homepage for SBuild and is currently under development! 
-    <br/>Please visit also <a href="http://sbuild.tototec.de">sbuild.tototec.de</a>.
-    </small></h1>
-
 <div class="hero-unit">
 	<h1>Get back in control of your build!</h1>
 
