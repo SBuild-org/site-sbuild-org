@@ -1,0 +1,38 @@
+= SBuild 0.7.7
+Tobias Roeser
+2014-12-17
+:jbake-type: page
+:jbake-status: published
+:previoussbuildversion: 0.7.6
+:sbuildversion: 0.7.7
+
+Release date: 2014-12-17
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:/download[Other downloads...]
+
+
+== Online Documentation
+
+* link:/doc/sbuild/{sbuildversion}[SBuild Documentation]
+* link:/news/2014/12/17/SBuild-0.7.7-About-Thread-Deadlock-fixes-and-parallel-ClassLoaders-in-Scala.html[Announcement]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+.SBuild Runner
+* Fixed parallel classloading, now also for the first created classloader
+  instance.
+  
+.SBuild Addons
+* Improved theading behaviour in ForkSupport.
+
+All Releases: link:index.html[Release History]

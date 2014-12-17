@@ -1,0 +1,34 @@
+= SBuild 0.7.7 - About Thread Deadlock fixes and parallel ClassLoaders in Scala
+:author: Tobias Roeser
+:revdate: 2014-12-17
+:jbake-type: post
+:jbake-status: published
+:jbake-tags: Release 
+:summary: We released SBuild 0.7.7 which fixed a potential thread deadlock issue.
+
+link:/releases//SBuild-0.7.7.html[SBuild 0.7.7] fixes a potentially thread deadlock in the procject's and plugin's classloaders.
+
+Read the full link:/releases//SBuild-0.7.7.html#Changelog[changelog here].
+
+I'm happy to say that I finally found the culprit after haunting that bug for over a half year now.
+It turned out, it isn't that easy to write a proper ClassLoader implementation in Scala. 
+
+*ClassLoaders in Scala*
+
+To implement a non-hierarchical ClassLoader for Java 7 and above it must be parallel loading capable.
+And to enable this capability you must invoke a caller sensitive protected static method from the same ClassLoader class but before the class gets constructed.
+Turns out, this isn't possible in Scala (whereas in Java it would be a simple static block).
+That's also the reason why the previous solution I implemented in SBuild 0.7.6 and before worked almost always but not for the first created instance, which of course is not good enough.
+
+But there is a possible workaround (read: hack) and because it's Scala, we can encapsulated that hack in a nice and safe way.
+We now create a dummy instance of the classloader and register its parallel capability from inside of that instance.
+Only after that we drop that instance and create another instance which now initialized correctly.
+We hide all this behind the `apply` method in the ClassLoader's companion object and make the constructor private.
+Elegant solution for a rather hacky technically motivated workaround.
+If you are interested in details, https://github.com/SBuild-org/sbuild/commit/4b8efad967b8eff422eb7179729b550e09159d6b[this commit] might be interesting to you.
+
+
+
+Merry Christmas!
+
+Tobias

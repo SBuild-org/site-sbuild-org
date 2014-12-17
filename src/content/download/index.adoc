@@ -4,7 +4,7 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 
-:sbuildversion: 0.7.6
+:sbuildversion: 0.7.7
 
 == SBuild {sbuildversion} - Current Stable
 
@@ -20,6 +20,14 @@ Tobias Roeser
 
 
 == Older Releases
+
+
+:sbuildversion: 0.7.6
+
+=== SBuild {sbuildversion}
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+
 
 :sbuildversion: 0.7.5
 

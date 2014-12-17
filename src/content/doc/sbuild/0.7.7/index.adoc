@@ -1,0 +1,314 @@
+= SBuild Reference Manual 0.7.7
+:author: Tobias Roeser
+:revdate: 2014-12-17
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.7.7
+:numbered:
+:idprefix:
+:toc:
+:toc-placement: preamble
+:toclevels: 2
+
+This is the Documentation for SBuild {sbuildversion}.
+link:{path_doc_sbuild}[_Not the version you are looking for?_]
+
+:leveloffset: 1
+
+include::Installation.adoc[]
+
+include::Usage.adoc[]
+
+:leveloffset: 0
+
+
+== Writing Buildfiles
+
+=== The Buildfile - the only true source
+
+SBuild buildfiles are normal Scala source files.
+As such, they can be viewed and edited as any other text file with any text editor. Although an editor providing syntax highlighting and other Scala specific candy might be helpful.
+
+*The buildfile is the only place, where SBuild looks for description of your build!*
+
+To change the build and the SBuild behavior, you have thus only the option to change the buildfile or to make use of the various commandline options of `sbuild`.
+
+=== Buildfile Preprocessing
+
+SBuild buildfiles are Scala source files and must be compiled before SBuild can use them.
+This preprocessing is automatically done by SBuild, without any interaction from your site.
+Of course, the Scala compiler has no notion of SBuild plugins, libraries and includes, thus the buildfile must be preprocessed.
+SBuild will extract and interpret specific annotations before the buildfile is compiled and executed.
+
+These are the special annotation, which are typically placed just before the build class `SBuild`.
+[cols="1,5"]
+|====
+| `@version`
+| Specified the minimal SBuild version that is required for this buildfile.
+  This annotation should be present in each buildfile.
+  It will help detect version mismatches which otherwise might result in strange compile or runtime errors, which are comparatively hard to understand.
+  
+  Example: `@version("0.7.2")`
+  
+  If in doubt, use the version you are currently using.
+    
+// TODO: refer to plugin chapter
+| `@classpath`
+| Additional plugins and libraries that should be used by this buildfile have to be declared here.
+  Each given entry will be interpreted as a potentially plugin (see chapter Plugins), unless it is prefixed with +raw:+.
+  If the entry is a plugin, SBuild will automatically scan it's manifest and load it's dependencies.
+  All default SchemeHandler can be used here.
+    
+  Example: `@classpath("mvn:org.sbuild:org.sbuild.plugins.sbuildplugin:0.3.0", "mvn:org.apache.ant:ant:1.8.4")`
+  
+| `@include`
+| Here you can refer to additional Scala source files.
+  These files will be compiled by SBuild with the same classpath as the buildfile.
+  The compiled classes will be added to the classpath and can be directly used. 
+  All default SchemeHandler can be used here. 
+  
+  Example: `@include("CommonSettings.scala")`
+|====
+
+=== SBuild Core API
+
+The Core API of SBuild allows you to
+
+* create targets,
+* declare actions that should take place when a target gets executed,
+* define dependencies between targets,
+* interact with the environment,
+* run file operations
+
+With a knowledge of the Core API, you have everything you need to write simple to complex buildfiles in an imperative style.
+
+*Please don't stop here.* With the use of Plugins you will be able to write much more concise and readable build script in a declarative fashion.
+// TODO link to plugins
+
+==== Targets
+
+Targets are the central unit of work in SBuild. Each target has at least a *name*. This name is what you use on the SBuild commandline.
+
+Targets can be of two kinds:
+
+* *file* targets - Targets, that are associated with a local file.
+* *phony* targets - Targets, not associated to any file representing some kind of action.
+
+
+.A buildfile with two targets, `file.txt` and `action`
+[source,scala,subs="attributes,verbatim"]
+----
+import de.tototec.sbuild._
+
+@version("{sbuildversion}")
+class SBuild(implicit _project: Project) {
+
+  Target("file.txt") //<1>
+
+  Target("phony:action") //<2>
+
+}
+----
+
+<1> A *file* target associated with the file `file.txt` in the project directory. The prefix `file:` is optional and was omitted.
+<2> A *phony* target with the name `action`. As it is *not* associated with any file it must be prefixed with `phony:`.
+
+File-Targets represent a file in the local file system.
+If SBuild is requested to execute a file target (without dependencies),
+it will first check if that file already exists, and only if not, the target is run.
+
+Phony-Targets represents some kind of action not resulting in a single local file.
+If SBuild is requested to execute a phony target, the target will always run.
+Of course, there are various mechanism to make that logic more clever, e.g. by making targets `cacheable`.
+
+==== Executions
+
+A plain target as seen above does not do anything when executed. That can be changed by assigning an execution block to a target.
+
+.A buildfile with two targets, `file` and `action`, both having an execution block
+[source,scala,subs="attributes,verbatim"]
+----
+import de.tototec.sbuild._
+
+@version("{sbuildversion}")
+class SBuild(implicit _project: Project) {
+
+  Target("file.txt") exec { //<1>
+    import java.io._
+    val target = Path("file.txt") //<2>
+    println(s"Created file: ${target}") //<3>
+    val ps = new PrintStream(target)
+    ps.println("file content") //<4>
+    ps.close()
+  }
+
+  Target("phony:action") exec { //<5>
+    println("Action executed") //<6>
+  }
+
+}
+----
+
+<1> A definition of a file target `file.txt` with an execution block.
+<2> Here you see a way to use `Path` to construct a `java.io.File` relative to the project directory. This is not the most appropriate way in this situation, as you will see soon in the "Target Context" section.
+<3> The string `"Created file: file.txt"` will be printed to standard output stream.
+<4> The string `file content` is written into the file `file.txt`.
+<5> A definition of a phony target with an execution block.
+<6> The string `"Action executed"` will be printed to standard output stream.
+
+The example above shows, how targets with execution blocks can be created.  
+
+==== Dependencies
+
+Targets can also have dependencies.
+
+TBD
+
+// access to dependencies from an action
+
+==== Target Context
+
+TBD
+
+==== File operations
+
+TBD
+
+
+TBD
+
+// Targets
+// Dependencies
+// Working with files
+
+
+=== Using Plugins
+
+TBD
+
+=== Multi-Project Setups
+
+TBD
+
+=== Working with Include-Files
+
+TBD
+
+== Advanced topics
+
+=== Understanding SchemeHandler's
+
+
+
+TBD
+
+=== Writing Plugins
+
+==== Concept
+
+The Plugin concept was introduced in SBuild 0.7.0 and further refined in 0.7.1 and 0.7.2.
+
+SBuild Users deal mostly with the Plugin API to access and configure Plugin instances.
+Implementers of Plugins implement the `Plugin trait to create and apply plugin instances to the current project.
+
+Finally, SBuild plugins need to be packaged as JAR files and need provided special entries in the JAR Manifest.
+
+==== Plugin API
+
+The Plugin API is defined by the {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.Plugin$[`Plugin` object]
+and the {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.Plugin$$PluginHandle[`PluginHandle` trait].
+
+The `Plugin` object is used to activate a plugin instance and can be also use to query for some properies of a plugin, e.g. it's version or whether a concrete instance is active or not.
+
+Once activated through one of the `Plugin.apply` methods, the `PluginHandle` trait provides various methods to work with Plugin instances.
+
+
+==== Implementing a Plugin
+
+An plugin implementation is essentially a class which extends the {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.Plugin[`Plugin` trait].
+
+This is the `Plugin` trait ({url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.Plugin[see Scaladoc]):
+
+[source,scala]
+----
+package de.tototec.sbuild
+
+trait Plugin[T] {  // <1>
+  def create(name: String): T  // <2>
+  def applyToProject(instances: Seq[(String, T)])  // <3>
+}
+----
+
+<1> The type parameter `T` represents the type of the plugin instance.
+<2> Create a new plugin instance with the name name. `""` is a valid instance name and represent the default instance.
+<3> Apply the plugin's functionality to the project. This is called at the end of the project initialization, especially after the buildfile was processed.
+
+The class can have either a default constructor or a one-arg constructor of type `Project`.
+The later is also the preferred way to get a instance of the current project and is especially required
+if you want to contribute targets or scheme handler to the project.
+
+By mixing in additional traits, plugin can make use of additional plugin features.
+
+
+==== Plugin with Dependencies
+
+Plugins that depend on other plugins need to mix-in the `PluginWithDependencies` trait.
+SBuild will ensure, that such a plugin will be applied to the project before their dependencies are applied.
+This way, it is guaranteed, that configuration changed made while the application can take effect.
+
+This is the `PluginWithDependencies` trait ({url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.PluginWithDependencies[see Scaladoc]):
+
+[source,scala]
+----
+package de.tototec.sbuild
+
+trait PluginWithDependencies { self: Plugin[_] =>
+  def dependsOn: Seq[PluginDependency]
+}
+----
+
+Currently, two kind of `PluginDependency`'s can be used:
+
+* `PluginDependency.Basic` - This is just the reference to another plugin instance class.
+* `PluginDependency.Versioned` - This is a reference to another plugin instance with additional version constraints.
+
+
+==== Getting notified when a Plugin configuration changes
+
+Plugins that want to be notified whenever they get (re-)configured need to mix-in the `PluginConfigureAware` trait.
+
+This is the `PluginConfigureAware` trait ({url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.PluginConfigureAware[see Scaladoc]):
+
+[source,scala]
+----
+package de.tototec.sbuild
+
+trait PluginConfigureAware[T] { self: Plugin[T] =>
+  def configured(name: String, instance: T)
+}
+----
+
+TBD
+
+==== Packaging Plugins
+
+The plugin implementation needs to be packaged into a JAR file together with a proper JAR Manifest, which need some of the following supported entries.
+
+* `SBuild-Plugin` - Used to declare one or more plugins. This entry is mandatory!
+* `SBuild-Classpath` - Used to add additional dependencies (as part of the private class space). All default SBuild schemes (file, http, mvn) are supported.
+* `SBuild-ExportPackage` - Used to export some of the plugins private packages. If this is not present, all packages of that plugin will be exported.
+
+
+==== Conventions
+
+TBD
+
+==== Plugin Classloading
+
+TBD
+
+== Vision
+
+=== The unimplemented parts
+
+=== The eco system
