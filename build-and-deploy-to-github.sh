@@ -9,17 +9,26 @@ cp -r assets-repo/assets/uploads target/uploads
 
 LC_ALL=C ./sbuild-wrapper jbake
 
-cd target
+echo "sbuild.org" > target/CNAME
 
-git init
+if [ -z "$TRAVIS_PULL_REQUEST}" -a "${TRAVIS_BRANCH}" == "master" ]; then
 
-git config user.name "SBuild CI"
-git config user.email "le.petit.fou@web.de"
+  echo "Deploying to GitHub pages branch"
 
-echo "sbuild.org" > CNAME
+  cd target
 
-git add .
+  git init
 
-git commit -m "Automatic deploy to GitHub Pages."
+  git config user.name "SBuild CI"
+  git config user.email "le.petit.fou@web.de"
 
-git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master > /dev/null 2>&1
+  git add .
+
+  git commit -m "Automatic deploy to GitHub Pages."
+
+  git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master > /dev/null 2>&1
+
+else
+  echo "Skipping deployment to GitHub pages as this is not the master branch or a pull request"
+
+fi
