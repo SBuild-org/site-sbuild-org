@@ -11,7 +11,7 @@ LC_ALL=C ./sbuild-wrapper jbake
 
 echo "sbuild.org" > target/CNAME
 
-if [ -z "$TRAVIS_PULL_REQUEST}" -a "${TRAVIS_BRANCH}" == "master" ]; then
+if [ "$TRAVIS_PULL_REQUEST}" = "false" -a "${TRAVIS_BRANCH}" = "master" ]; then
 
   echo "Deploying to GitHub pages branch"
 
