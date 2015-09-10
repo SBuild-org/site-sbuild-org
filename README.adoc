@@ -1,5 +1,7 @@
 = The sbuild.org website project
 
+image:https://travis-ci.org/SBuild-org/site-sbuild-org.svg?branch=master["Build Status", link="https://travis-ci.org/SBuild-org/site-sbuild-org"]
+
 This project contains the sources to build the SBuild home page at http://sbuild.org.
 
 == How to build the website
