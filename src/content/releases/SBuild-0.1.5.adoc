@@ -11,7 +11,7 @@ Release date: 2012-10-26
 == Download
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
-* link:download[Other downloads...]
+* link:/download[Other downloads...]
 
 
 [#Changelog]
