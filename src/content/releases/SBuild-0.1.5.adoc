@@ -1,0 +1,24 @@
+= SBuild 0.1.5
+Tobias Roeser
+2012-10-26
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.1.5
+:previoussbuildversion: 0.1.4
+
+Release date: 2012-10-26
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* Fixed NPE bug in AntCopy.
+
+All Releases: link:index.html[Release History]

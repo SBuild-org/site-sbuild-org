@@ -1,0 +1,28 @@
+= SBuild 0.3.0
+Tobias Roeser
+2013-01-04
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.3.0
+:previoussbuildversion: 0.2.0
+
+Release date: 2013-01-04
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* SBuild is now based on Scala 2.10
+* ZipSchemeHandler: Fixed issue with fail of unpacking of some zip files.
+* New Scalac Addon which is independent of SBuild Scalac Runtime. Thus, it is
+* now possible to compile for Scala versions different than SBuild's one.
+* ScalaTest Addon: Added fork option.
+
+All Releases: link:index.html[Release History]

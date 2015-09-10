@@ -1,0 +1,56 @@
+= SBuild 0.4.0
+Tobias Roeser
+2013-03-09
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.4.0
+:previoussbuildversion: 0.3.2
+
+Release date: 2013-03-09
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+
+* Fixed --dependencyTree not showing up on when not used with --verbose.
+* Added new commandline option --list-modules to show a list of all involved modules (sub-projects).
+* Based up-to-date detection of phony targets on virtual last modified time stamps instead of boolean marker.
+* Reworked preorder dependency algorithm.
+* Improved internally used download function, which now handles successful download more efficiently and does not leave temp file on download failures. This improves all scheme handlers as well.
+* Added new commandline options --check and --check-recursive to check all defined targets for cycles and potentially missing scheme handlers. This will also detect projects with cacheable targets, that do not define an evictCache target.
+* Added new class Module which can be used to easily create target references to targets in that module with Module.targetRef(String) and Module.targetRefs(String*).
+* Module(String) and Modules(String*) now return a Module resp. a Seq[Module].
+* Deprecated Module.apply(String*) as the return value differs from Module.apply(String), which is not obvious. Use Modules.apply(String*) instead.
+* Build script compiler now emits deprecation warnings.
+* SBuild now has slightly colored output based on jansi.fusesource.org, which can be disabled with --no-color command line option.
+* Improved error reporting on the commandline.
+* Added TargetContext.attachFile to attach additional file(s) to a target. Those files are now also included in the return value of TargetRef.files.
+* TargetRef.files can now only be used inside a Target execution, and only on dependencies that are declared in dependsOn of that executing target.
+* Added TargetContext.prerequisitesLastModified to retrieve the effective lastModified value of all declared dependencies.
+* New ScanSchemeHandler, to scan a directory, based on a pattern and attach all found files to the target context. That way, one can depend on a set of files, considering their up-to-dateness.
+* New (experimental) embedded API, dedicated to SBuild embedding, e.g. in SBuild Eclipse Plugin
+* Fixed return value handling in shell wrapper, resulting in sbuild command line application always returning 0.
+* Updated German translations.
+* Improved tolerance for truncated last modified time stamps of files.
+* Also print the target self description when executing, if any.
+* Added support for additional commandline options via environment variable SBUILD_OPTS.
+* Added new command line options --just-clean and --just-clean-recursive to delete all .sbuild state directories (recursive) without checking and reading any SBuild build file.
+* Cache Scala compiler instance when reading projects, to improve compilation speed for build files.
+* Dramatic speedup of dependency tree traversal.
+* New Javac addon.
+* Support for newer bndlib in BndJar addon.
+* Added method Module.apply to construct TargetRef.
+* Empty phony targets now automatically attach their dependencies files to their own target context.
+
+All Releases: link:index.html[Release History]

@@ -1,0 +1,29 @@
+= SBuild 0.2.0
+Tobias Roeser
+2012-11-08
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.2.0
+:previoussbuildversion: 0.1.5
+
+Release date: 2012-11-08
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* A buildfile can now include other scala files. Added @include to share common configuration and functionality.
+* Added project accessor to TargetContext.
+* Added --quiet command line option to suppress percentage calculation and status messages. This will drastically speed up SBuild's initialization time for larger multi-projects, as the dependency tree is not walked trough in advance.
+* Added arguments parameter to AntJava, as args is deprecated.
+* Added more options/parameters to ScalaTest addon.
+* Command line option --create-stub now tries to copy a stub from SBuild's home directory ($SBUILD_HOME/stub/SBuild.scala) if such one exists, before using a hardcoded one.
+
+All Releases: link:index.html[Release History]

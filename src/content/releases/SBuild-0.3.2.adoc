@@ -1,0 +1,30 @@
+= SBuild 0.3.2
+Tobias Roeser
+2013-01-26
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.3.2
+:previoussbuildversion: 0.3.1
+
+Release date: 2013-01-26
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* Common scheme handlers (mvn, http, zip) are now registered by default, but can be overridden as usual.
+* All by-default registered scheme handler can now be used in @classpath and @include elements.
+* Changed behavior of --version command line option. It now exists the application as expected.
+* Added new AntZipFileSet for conveniene when using AntZip.
+* Added new ScalaRepl addon providing access to the interactive Scala console.
+* Fixed issues in parser for @classpath and @include.
+
+
+All Releases: link:index.html[Release History]

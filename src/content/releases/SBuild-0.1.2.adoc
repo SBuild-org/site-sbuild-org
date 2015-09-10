@@ -1,0 +1,25 @@
+= SBuild 0.1.2
+Tobias Roeser
+2012-10-04
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.1.2
+:previoussbuildversion: 0.1.1
+
+Release date: 2012-10-04
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* Fixed cross-project dependency resolution problem for file targets.
+
+All Releases: link:index.html[Release History]

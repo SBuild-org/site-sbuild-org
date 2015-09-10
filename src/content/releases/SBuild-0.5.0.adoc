@@ -1,0 +1,45 @@
+= SBuild 0.5.0
+Tobias Roeser
+2013-07-12
+:jbake-type: page
+:jbake-status: published
+:sbuildversion: 0.5.0
+:previoussbuildversion: 0.4.0
+
+Release date: 2013-07-12
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+
+* Updated dependencies: Scala 2.10.2, Jansi 1.10.
+* Added support to reference scheme handlers of other projects/modules.
+* Added parameters useArgsFile, jvmArgs and sourcePath to Scalac addon.
+* Added Scalac.scalaClasspath(version) classpath factory.
+* Fix FileNotFoundException in execution of cacheable targets with path separators in it's name.
+* Allow to evict caches per cacheable target.
+* Huge speed up in up-to-date detection algorithm.
+* Added SchemeHandler.replace method to make the intend to replace a already registered scheme handler explicit (and checked).
+* New MapperSchemeHandler to translate schemes and/or pathes, to be used in "source" and "javadoc" scheme.
+* New experimental default schemes "source" and "javadoc", that will try to provided sources and javadoc for any given dependency, e.g. "source:mvn:a.b.1" will be translated to "mvn:a.b.1;classifier=sources"
+* Fixed --fsc option.
+* Fixed colored output under windows.
+* Bash Completion support.
+* BndJar addon creates now the target directory, if it does not exists.
+* New experimental scheme handler to access 'val's and 'def's in projects in new project de.tototec.sbuild.experimental.
+* Added mechanism to locate files relative to included scala files, via Path[Config]("path/relative/to/Config.scala").
+* Removed deprecated code: IfNotUpToDate, PersistentUpToDateChecker. Their functionality is now provided via phony cacheable targets (Target.cacheable, Target.evictCache).
+* Deprecated Pathes and added Paths object.
+
+All Releases: link:index.html[Release History]

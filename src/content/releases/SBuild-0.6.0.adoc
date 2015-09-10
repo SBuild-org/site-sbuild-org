@@ -1,0 +1,43 @@
+= SBuild 0.6.0
+Tobias Roeser
+2013-09-19
+:jbake-type: page
+:jbake-status: published
+:previoussbuildversion: 0.5.0
+:sbuildversion: 0.6.0
+
+Release date: 2013-09-19
+
+== Download
+
+* SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
+* link:download[Other downloads...]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
+* {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
+
+
+[#Changelog]
+== Changelog
+
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
+
+* Fixed a bug in SBuildEmbedded concerning incomplete file lists for local file dependencies.
+* New ResolveFiles API to eagerly resolve dependencies, e.g. to fulfil additional dependencies of a scheme handler.
+* Changed SchemeHandler API again. Replaced the type String of the path parameter by the new type SchemeContext. With this change, a scheme handler is able to retrieve the effectively used scheme.
+* Refactored initialization logic of ProjectTarget into Project. ProjectTarget is now free of any SchemeHandler logic.
+* Download methods of util, HttpSchemeHandler and MvnSchemeHandler set an SBuild specific user agent. This fixed 403 Forbidden issues for some Maven repositories (e.g. Central).
+* Updated dependencies: Jansi 1.11, CmdOption 0.3.1
+* Added new cmdline option --jobs, -j to configure the number of targets to run in parallel.
+* Improved error handling for parallel builds. A failed target now fails the complete build instantly.
+* Handle invalid commandline options properly.
+* Better download progress (percent, content length, url) and failure handling (resume, retry).
+* Moved SBuild runner into separate project de.tototec.sbuild.runner to keep the SBuild API as small as possible.
+* Improved error messages of ScanSchemeHandler.
+* Added new commandline option --repeat to let SBuild repeat an action after a given time interval.
+* Build script compiler now records scala compiler output, e.g. for later use in IDEs. Created new scriptcompiler project.
+* Added support for sequential dependencies, which will be executed sequentially. You have to use "~~" instead of "~".
+* Various internal cleanups.
+
+
+All Releases: link:index.html[Release History]
