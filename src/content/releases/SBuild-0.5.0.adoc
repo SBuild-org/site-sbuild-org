@@ -11,7 +11,10 @@ Release date: 2013-07-12
 == Download
 
 * SBuild Distribution: {url_uploads_sbuild}/{sbuildversion}/sbuild-{sbuildversion}-dist.zip[sbuild-{sbuildversion}-dist.zip]
-* link:download[Other downloads...]
+* link:/download[Other downloads...]
+
+== Online Documentation
+
 * {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild/#de.tototec.sbuild.package[SBuild Public API Reference (Scaladoc)]
 * {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.addons/#de.tototec.sbuild.addons.package[SBuild Addons API Reference (Scaladoc)]
 * {url_uploads_sbuild}/{sbuildversion}/scaladoc/de.tototec.sbuild.ant/#de.tototec.sbuild.ant.package[SBuild Ant Support and Wrapper Reference (Scaladoc)]
