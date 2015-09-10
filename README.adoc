@@ -14,7 +14,7 @@ To test the site locally, run:
 LC_ALL=C sbuild clean serve-jbake
 ----
 
-== Updating the site after a new SBuild release
+== Automatic deployment
 
-TODO
+Each update to the master branch of this repository triggers an automatic build and deployment to http://sbuild.org
 
