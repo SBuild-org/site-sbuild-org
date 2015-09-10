@@ -4,6 +4,7 @@ Tobias Roeser
 :jbake-type: page
 :jbake-status: published
 :sbuildversion: 0.7.1
+:previoussbuildversion: 0.7.0
 
 Release date: 2013-12-20
 
@@ -24,7 +25,7 @@ Release date: 2013-12-20
 [#Changelog]
 == Changelog
 
-Changes since link:SBuild-0.7.0.html[SBuild 0.7.0]
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
 
 .SBuild core
 * Plugin API: Renamed Plugin.PluginConfigurer to Plugin.PluginHandle and

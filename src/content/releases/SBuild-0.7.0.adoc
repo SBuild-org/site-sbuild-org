@@ -3,6 +3,8 @@ Tobias Roeser
 2013-12-06
 :jbake-type: page
 :jbake-status: published
+:previoussbuildversion: 0.6.0
+:sbuildversion: 0.7.0
 
 Release date: 2013-12-06
 
@@ -24,7 +26,7 @@ Release date: 2013-12-06
 [#Changelog]
 == Changelog
 
-Changes since link:SBuild-0.6.0.html[SBuild 0.6.0]
+Changes since link:SBuild-{previoussbuildversion}.html[SBuild {previoussbuildversion}]
 
 .SBuild core and SBuild Runner
 * Plugin system with isolated plugin class loading and hierarchical dependency resolving.
