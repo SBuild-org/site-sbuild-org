@@ -2,6 +2,9 @@
 
 set -e
 
+echo "TRAVIS_BRANCH=${TRAVIS_BRANCH}"
+echo "TRAVIS_PULL_REQUEST=${TRAVIS_PULL_REQUEST}"
+
 git clone --single-branch --branch master "https://github.com/SBuild-org/site-sbuild-org-assets-1" assets-repo
 
 mkdir target
