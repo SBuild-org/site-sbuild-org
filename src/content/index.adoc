@@ -25,7 +25,7 @@ At any time, you can customize your build when needed.
 
 SBuild does not make any assumptions about your build environment. It does not guess settings or additional buildfiles. 
 You can always know what it will do based on one single entry point: the buildfile.
-Your co-workers and your CI team with thank you, afterwards.
+Your co-workers and your CI team will thank you afterwards.
 
 We believe, this is a requirement to achieve stable and reproducible builds over time. 
 
@@ -33,7 +33,7 @@ We believe, this is a requirement to achieve stable and reproducible builds over
 
 SBuild integration capabilities allow tools like Ant tasks, Eclipse Aether (Maven) or Adept to integrate seamlessly. 
 
-SBuild's plugin container is capable to isolate plugin implementations, so that plugins will not interfere others.
+SBuild's plugin container is capable to isolate plugin implementations, so that plugins will not interfere with others.
 Each plugin has fine control which API's it will export to it's consumer.
 
 === Open
