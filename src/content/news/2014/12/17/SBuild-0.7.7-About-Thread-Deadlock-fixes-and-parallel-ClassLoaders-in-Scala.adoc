@@ -22,7 +22,7 @@ That's also the reason why the previous solution I implemented in SBuild 0.7.6 a
 
 But there is a possible workaround (read: hack) and because it's Scala, we can encapsulated that hack in a nice and safe way.
 We now create a dummy instance of the classloader and register its parallel capability from inside of that instance.
-Only after that we drop that instance and create another instance which now initialized correctly.
+Only after that we drop that instance and create another instance which now initializes correctly.
 We hide all this behind the `apply` method in the ClassLoader's companion object and make the constructor private.
 Elegant solution for a rather hacky technically motivated workaround.
 If you are interested in details, https://github.com/SBuild-org/sbuild/commit/4b8efad967b8eff422eb7179729b550e09159d6b[this commit] might be interesting to you.
