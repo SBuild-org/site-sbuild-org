@@ -6,7 +6,6 @@ env:
   global:
   - LC_ALL: C
   - GH_REF: github.com/SBuild-org/SBuild-org.github.io
-  - secure: "RnGwPUYOrqX4ue/U+VKVSaeXDfSOPSK2L2Vp1/InuO2SdkD1SispZx2oLIJAxgPMCMOMQVYG8SZPJaDKOEhTM8Z30k7GcJ57W8ZaXLnd6JGXnNlCeq0lnvnWhcoR75QCYQowu8Q5PJlvCRjVNRjnrV7F6G3S+S3aFFq+l6ld+Qs="
-
+  - secure: eJGu3cD6uoAeWcgu1FEnC5IWz9JcDHGii8a55jn0vySNsVg5W8jzAlwq+tQ4bHIl8VfR2xjykc43m6TPfAQyEQwMWFUy3K9JIYEWLL7kQgolAudx1rZfYnOUjBCz3+9Mx069FK5KF4zGLeObbpKzvH5BidV/t1RrlqqWVebjV0Y=
 script: "./build-and-deploy-to-github.sh"
 
