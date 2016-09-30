@@ -42,4 +42,4 @@ else
 
 fi
 
-echo "<<< DONE
+echo "<<< DONE"
